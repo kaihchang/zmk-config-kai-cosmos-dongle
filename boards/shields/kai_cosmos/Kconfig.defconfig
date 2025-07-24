@@ -6,6 +6,9 @@ config ZMK_KEYBOARD_NAME
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
+config ZMK_SPLIT
+    default y
+
 # Set this to the number of peripherals your dongle will have.
 # For a unibody, this would be 1. If you have left and right halves, set it to 2, etc.
 config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
@@ -24,9 +27,6 @@ config ZMK_USB
 endif
 
 if SHIELD_COSMOS_LEFT || SHIELD_COSMOS_RIGHT || SHIELD_COSMOS_DONGLE
-
-config ZMK_SPLIT
-    default y
 
 config ZMK_BLE
 	default y
