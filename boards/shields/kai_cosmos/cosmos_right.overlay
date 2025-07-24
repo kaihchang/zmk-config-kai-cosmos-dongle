@@ -5,6 +5,12 @@
     col-offset = <5>;
 };
 
+kscan0: kscan {
+	compatible = "zmk,kscan-gpio-matrix";
+	diode-direction = "col2row";
+	wakeup-source;
+};
+
 &kscan0 {
 	col-gpios
 		= <&gpio1  6 (GPIO_ACTIVE_HIGH)> // col_0_right P1.06
