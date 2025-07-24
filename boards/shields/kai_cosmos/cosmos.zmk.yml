@@ -1,0 +1,14 @@
+file_format: "1"
+id: kai-cosmos
+name: kai-cosmos
+type: shield
+url: https://github.com/kaihchang/zmk-config-kai-cosmos-dongle
+requires: [nice_nano_v2]
+features:
+  - keys
+  - pointer
+  - dongle
+siblings:
+  - cosmos_left
+  - cosmos_right
+  - cosmos_dongle

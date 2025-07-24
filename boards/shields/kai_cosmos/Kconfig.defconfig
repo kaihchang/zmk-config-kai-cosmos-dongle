@@ -1,0 +1,22 @@
+if SHIELD_COSMOS_DONGLE
+
+config ZMK_KEYBOARD_NAME
+    default "Kai Cosmos Dongle"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+config ZMK_USB
+	default y
+
+endif
+
+if SHIELD_COSMOS_LEFT || SHIELD_COSMOS_RIGHT || SHIELD_COSMOS_DONGLE
+
+config ZMK_SPLIT
+    default y
+
+config ZMK_BLE
+	default y
+
+endif
