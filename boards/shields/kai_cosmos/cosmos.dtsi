@@ -1,6 +1,12 @@
 #include "cosmos-layouts.dtsi"
 #include <dt-bindings/zmk/matrix_transform.h>
 
+kscan0: kscan {
+	compatible = "zmk,kscan-gpio-matrix";
+	diode-direction = "col2row";
+	wakeup-source;
+};
+
 &physical_layout0 {
     kscan = <&kscan0>;
     transform = <&default_transform>;
