@@ -1,5 +1,4 @@
-#include "cosmos-layouts.dtsi"
-#include <dt-bindings/zmk/matrix_transform.h>
+#include "cosmos.dtsi"
 
 &physical_layout0 {
     transform = <&default_transform>;
