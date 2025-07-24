@@ -1,5 +1,5 @@
 #include "cosmos.dtsi"
-#import "cosmos-layouts.dtsi"
+#include "cosmos-layouts.dtsi"
 
 &physical_layout0 {
     transform = <&default_transform>;
