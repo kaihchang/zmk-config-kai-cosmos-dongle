@@ -15,7 +15,7 @@
 #define Nav 3
 #define Mouse 4
 #define Game 5
-#define COMBO_REQUIRE_DELAY 150
+#define COMBO_REQUIRE_DELAY 120
 
 /*
     No chosen zmk,matrix-transform here if using ZMK stuidio.
