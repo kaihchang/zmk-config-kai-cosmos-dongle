@@ -20,10 +20,3 @@
 		, <&gpio1  0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row_3_left P1.00
 		;
 };
-
-/ {
-    chosen {
-        zmk,kscan = &kscan0;
-        zmk,physical-layout = &physical_layout0;
-	};
-};

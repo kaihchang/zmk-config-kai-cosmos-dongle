@@ -30,10 +30,8 @@
     };
 };
 
-#include <zephyr/dt-bindings/input/input-event-codes.h>
-
 &spi0 {
-    status = "okay";
+    status = "disabled";
     compatible = "nordic,nrf-spim";
     pinctrl-0 = <&spi0_default>;
     pinctrl-1 = <&spi0_sleep>;
@@ -41,7 +39,7 @@
     cs-gpios = <&gpio0 8 GPIO_ACTIVE_LOW>; // NCS P0.08
 
     trackball: trackball@0 {
-        status = "okay";
+        status = "disabled";
         compatible = "pixart,pmw3610";
         reg = <0>;
         spi-max-frequency = <2000000>;
@@ -60,35 +58,5 @@
         /* while force-awake is acitvated, enable this mode to force sampling per 
            4ms, where the default sampling rate is 8ms. */
         /* NOTE: apply this mode if you need 250Hz with direct USB connection. */
-    };
-};
-
-/ {
-    trackball_listener {
-        compatible = "zmk,input-listener";
-        device = <&trackball>;
-        input-processors = <&zip_temp_layer 4 400>; // auto-mouse temp layer for 0.4 secs
-    };
-
-    /omit-if-no-ref/ zip_temp_layer: zip_temp_layer {
-        compatible = "zmk,input-processor-temp-layer";
-        #input-processor-cells = <2>;
-        require-prior-idle-ms = <500>; // Only activate if no key presses for 0.5 seconds
-    };
-
-    split_inputs {
-        #address-cells = <1>;
-        #size-cells = <0>;
-
-        glidepoint_split: glidepoint_split@0 {
-            compatible = "zmk,input-split";
-            reg = <0>;
-        };
-    };
-
-    glidepoint_listener: glidepoint_listener {
-        compatible = "zmk,input-listener";
-        status = "disabled";
-        device = <&glidepoint_split>;
     };
 };
