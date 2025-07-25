@@ -24,4 +24,15 @@ if SHIELD_COSMOS_LEFT || SHIELD_COSMOS_RIGHT || SHIELD_COSMOS_DONGLE
 config ZMK_BLE
 	default y
 
+config ZMK_POINTING
+    default y
+
+endif
+
+if SHIELD_COSMOS_RIGHT
+
+# Assuming pointing device uses SPI
+config SPI
+    default y
+
 endif

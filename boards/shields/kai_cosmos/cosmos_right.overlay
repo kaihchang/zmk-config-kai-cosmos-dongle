@@ -1,11 +1,17 @@
 #include "cosmos.dtsi"
 #include "pmw3610.dtsi"
+#include "cosmos-layouts.dtsi"
+#include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
 
 &default_transform {
     col-offset = <5>;
 };
 
 &kscan0 {
+    compatible = "zmk,kscan-gpio-matrix";
+    diode-direction = "col2row";
+
 	col-gpios
 		= <&gpio1  6 (GPIO_ACTIVE_HIGH)> // col_0_right P1.06
 		, <&gpio1  4 (GPIO_ACTIVE_HIGH)> // col_1_right P1.04
@@ -20,4 +26,15 @@
 		, <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row_2_right P0.10
 		, <&gpio0  9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row_3_right P0.09
 		;
+};
+
+&trackball_split {
+    device = <&trackball>;
+};
+
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+        zmk,physical-layout = &physical_layout0;
+        };
 };

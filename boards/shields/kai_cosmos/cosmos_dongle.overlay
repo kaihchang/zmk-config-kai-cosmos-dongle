@@ -1,9 +1,14 @@
+#include "cosmos.dtsi"
+#include "pmw3610.dtsi"
 #include <dt-bindings/zmk/matrix_transform.h>
 
 #import "cosmos-layouts.dtsi"
-
 &physical_layout0 {
     transform = <&default_transform>;
+};
+
+&trackball_listener{
+    status = "okay";
 };
 
 / {
