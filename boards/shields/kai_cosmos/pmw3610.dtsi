@@ -80,16 +80,16 @@
         #address-cells = <1>;
         #size-cells = <0>;
 
-        trackball_split: trackball_split@0 {
+        glidepoint_split: glidepoint_split@0 {
             compatible = "zmk,input-split";
             reg = <0>;
         };
     };
 
-    trackball_listener: trackball_listener {
+    glidepoint_listener: glidepoint_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
-        device = <&trackball_split>;
+        device = <&glidepoint_split>;
         // Optional
         input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
     };

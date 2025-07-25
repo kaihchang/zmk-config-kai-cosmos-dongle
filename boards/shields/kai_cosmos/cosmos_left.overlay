@@ -1,4 +1,5 @@
 #include "cosmos.dtsi"
+#include "cosmos-layouts.dtsi"
 
 &kscan0 {   
     compatible = "zmk,kscan-gpio-matrix";
@@ -24,5 +25,5 @@
     chosen {
         zmk,kscan = &kscan0;
         zmk,physical-layout = &physical_layout0;
-        };
+	};
 };
