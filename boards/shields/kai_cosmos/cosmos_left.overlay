@@ -20,3 +20,8 @@
 		, <&gpio1  0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row_3_left P1.00
 		;
 };
+
+// workaround for error message "peripheral input splits need an `input` property set"?
+&glidepoint_split {
+    status = "disabled";
+};
