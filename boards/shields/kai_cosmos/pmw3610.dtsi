@@ -11,6 +11,8 @@
 #define INPUT_REL_HWHEEL 0x06           /**< Relative horizontal wheel coordinate */
 #define INPUT_REL_MISC 0x09             /**< Relative misc coordinate */
 
+#include <zephyr/dt-bindings/input/input-event-codes.h> // likely for &spi0
+
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
