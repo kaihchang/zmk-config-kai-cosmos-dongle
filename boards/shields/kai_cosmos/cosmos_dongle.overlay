@@ -6,6 +6,10 @@
     transform = <&default_transform>;
 };
 
+&glidepoint_listener {
+    status = "okay";
+};
+
 / {
     chosen {
         zmk,kscan = &mock_kscan;
@@ -18,16 +22,4 @@
         rows = <0>;
         events = <0>;
     };
-};
-
-/ {
-	vtrackball: virtual_input_trackball {
-		compatible = "zmk,virtual-input";
-	};
-
-	input_relay_config_trackball {
-		compatible = "zmk,split-peripheral-input-relay";
-		device = <&vtrackball>;
-		relay-channel = <102>;
-	};
 };

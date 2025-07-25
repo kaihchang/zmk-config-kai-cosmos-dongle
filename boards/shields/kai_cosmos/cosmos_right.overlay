@@ -27,22 +27,30 @@
 		;
 };
 
-&spi0 {
-    status = "okay";
+&pro_micro_spi {
+    cs-gpios = <&pro_micro 19 GPIO_ACTIVE_LOW>; // pmw3610 is using P0.06 for nCS
+
+    glidepoint: glidepoint@0 {
+        compatible = "cirque,pinnacle"; // not using Cirque, but seems like everyone on Github uses this
+        reg = <0>;
+        spi-max-frequency = <1000000>;
+        status = "okay";
+        dr-gpios = <&pro_micro 5 (GPIO_ACTIVE_HIGH)>; // what is dr-gpios?
+
+        sensitivity = "4x";
+        sleep;
+        no-taps;
+    };
 };
 
-&trackball {
-    status = "okay";
+// Overrides for the input-split child node
+&glidepoint_split {
+    device = <&glidepoint>;
 };
 
 / {
-	vtrackball: virtual_input_trackball {
-		compatible = "zmk,virtual-input";
-	};
-
-	input_relay_config_trackball {
-		compatible = "zmk,split-peripheral-input-relay";
-		device = <&trackball>;
-		relay-channel = <102>;
-	};
+	glidepoint_listener {
+        compatible = "zmk,input-listener";
+        device = <&glidepoint>;
+    };
 };
