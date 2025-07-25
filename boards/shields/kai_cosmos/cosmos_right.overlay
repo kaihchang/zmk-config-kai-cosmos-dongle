@@ -36,5 +36,5 @@
 };
 
 &glidepoint_split {
-    device = <&glidepoint>;
+    device = <&glidepoint_split>;
 };
