@@ -11,6 +11,10 @@
     status = "okay";
 };
 
+&glidepoint_split {
+    device = <&glidepoint_split>;
+};
+
 / {
     chosen {
         zmk,kscan = &mock_kscan;
