@@ -1,3 +1,4 @@
+#include "cosmos.dtsi"
 #include <dt-bindings/zmk/matrix_transform.h>
 
 #import "cosmos-layouts.dtsi"
