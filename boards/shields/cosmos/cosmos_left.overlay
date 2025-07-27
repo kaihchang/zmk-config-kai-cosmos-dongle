@@ -10,7 +10,7 @@
 	kscan0: kscan {
 		compatible = "zmk,kscan-gpio-matrix";
 		wakeup-source;
-	}
+	};
 
 	vtrackball: virtual_input_trackball {
 		compatible = "zmk,virtual-input";

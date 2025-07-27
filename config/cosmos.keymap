@@ -23,7 +23,7 @@
 #define Mouse 4
 #define Scroll 5
 #define Game 6
-#define COMBO_REQUIRE_DELAY 120
+#define COMBO_REQUIRE_DELAY 100
 
 &mt {
     flavor = "tap-preferred";
