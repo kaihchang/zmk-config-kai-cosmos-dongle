@@ -7,16 +7,19 @@
 		zmk,kscan = &kscan0;
 	};
 
+	kscan0: kscan {
+		compatible = "zmk,kscan-gpio-matrix";
+		wakeup-source;
+	}
+
 	vtrackball: virtual_input_trackball {
 		compatible = "zmk,virtual-input";
 	};
 };
 
 &kscan0 {
-	compatible = "zmk,kscan-gpio-matrix";
 	diode-direction = "col2row";
-	wakeup-source;
-	
+		
 	col-gpios
 		= <&gpio0  9 (GPIO_ACTIVE_HIGH)> // col_0_left P0.09
 		, <&gpio0 10 (GPIO_ACTIVE_HIGH)> // col_1_left P0.10
