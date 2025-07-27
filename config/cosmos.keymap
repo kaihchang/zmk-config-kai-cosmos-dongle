@@ -86,7 +86,7 @@
     ib_toggle_layer: ib_toggle_layer {
         compatible = "zmk,input-behavior-tog-layer";
         #binding-cells = <1>;
-        time-to-live-ms = <750>; // auto toggle for 750 ms
+        time-to-live-ms = <800>; // auto toggle for 800 ms
     };
 
     behaviors {
