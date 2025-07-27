@@ -12,6 +12,9 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 
+// keep all behavior settings for zmk studio
+#define ZMK_BEHAVIORS_OMIT_KT
+
 // layers
 #define Base 0
 #define Num 1
@@ -296,9 +299,17 @@
             bindings = <
 &kp Q    &kp W  &kp E  &kp R    &kp T                               &to 0  &kp U     &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp F12
 &kp TAB  &kp A  &kp W  &kp D    &kp G                               &kp H  &kp LEFT  &kp UP           &kp RIGHT          &kp LSHIFT
-&kp Z    &kp X  &kp S  &kp V    &kp B                               &kp N  &kp M     &kp DOWN         &kp TAB            &kp LA(TAB)
+&kp Z    &kp X  &kp S  &kp V    &kp B                               &kp N  &kp M     &kp DOWN         &kp TAB            &studio_unlock
          &kp F  &kp C  &kp ESC  &kp SPACE  &kp LEFT_SHIFT  &kp F12  &kp Z  &kp X     &kp ENTER        &kp ESC
             >;
+        };
+
+        _EXTRA1 {
+            status = "reserved";
+        };
+
+        _EXTRA2 {
+            status = "reserved";
         };
     };
 };

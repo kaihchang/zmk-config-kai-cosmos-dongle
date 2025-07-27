@@ -1,8 +1,16 @@
+// Can't have the kscan0 here, that one's physical
+
 #include "cosmos.dtsi"
+#include "cosmos-layouts.dtsi"
+
+&physical_layout0 {
+    transform = <&default_transform>;
+};
 
 / {
     chosen {
         zmk,kscan = &mock_kscan;
+        zmk,physical-layout = &physical_layout0;
     };
 
     mock_kscan: kscan_1 {

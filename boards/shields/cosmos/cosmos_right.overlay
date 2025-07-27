@@ -1,5 +1,6 @@
 #include "cosmos.dtsi"
 #include "cosmos_3610.dtsi"
+#include "cosmos-layouts.dtsi"
 
 &default_transform {
 	col-offset = <5>;
@@ -7,6 +8,8 @@
 
 &kscan0 {
 	compatible = "zmk,kscan-gpio-matrix";
+	diode-direction = "col2row";
+	wakeup-source;
 	
 	col-gpios
 		= <&gpio1  6 (GPIO_ACTIVE_HIGH)> // col_0_right P1.06
@@ -33,6 +36,10 @@
 };
 
 / {
+	chosen {
+		zmk,kscan = &kscan0;
+	}
+
 	vtrackball: virtual_input_trackball {
 		compatible = "zmk,virtual-input";
 	};
