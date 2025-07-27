@@ -243,7 +243,7 @@
             display-name = "Number";
             bindings = <
 &kp C_PLAY_PAUSE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP    &mkp MB4         &mkp MB5                               &kp BACKSPACE  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &holdtap_equal_enter ENTER EQUAL
-&sk LEFT_META     &sk LEFT_ALT       &sk LEFT_CONTROL   &sk LEFT_SHIFT   &to 5                                  &kp MINUS      &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp ASTERISK
+&sk LEFT_META     &sk LEFT_ALT       &sk LEFT_CONTROL   &sk LEFT_SHIFT   &to 6                                  &kp MINUS      &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp ASTERISK
 &kp LA(TAB)       &kp LA(F4)         &kp LS(LG(S))      &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)                      &kp PLUS       &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp FSLH
                   &trans             &trans             &to 0            &kp LG(TAB)        &kp ENTER  &kp ESC  &kp NUMBER_0   &kp DOT       &kp LS(TAB)   &kp TAB
             >;
