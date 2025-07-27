@@ -2,6 +2,22 @@
 #include "cosmos_3610.dtsi"
 #include "cosmos-layouts.dtsi"
 
+/ {
+	chosen {
+		zmk,kscan = &kscan0;
+	}
+
+	vtrackball: virtual_input_trackball {
+		compatible = "zmk,virtual-input";
+	};
+
+	input_relay_config_trackball {
+		compatible = "zmk,split-peripheral-input-relay";
+		device = <&trackball>;
+		relay-channel = <102>;
+	};
+};
+
 &default_transform {
 	col-offset = <5>;
 };
@@ -33,20 +49,4 @@
 
 &trackball {
     status = "okay";
-};
-
-/ {
-	chosen {
-		zmk,kscan = &kscan0;
-	}
-
-	vtrackball: virtual_input_trackball {
-		compatible = "zmk,virtual-input";
-	};
-
-	input_relay_config_trackball {
-		compatible = "zmk,split-peripheral-input-relay";
-		device = <&trackball>;
-		relay-channel = <102>;
-	};
 };
