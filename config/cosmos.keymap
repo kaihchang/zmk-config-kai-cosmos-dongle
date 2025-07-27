@@ -42,19 +42,30 @@
     trackball_listener {
         compatible = "zmk,input-behavior-listener";
         device = <&vtrackball>;
-        layers = <0 1 2 3>; // activate only on layer 0,1,2,3
+        layers = <Base Num Sym Nav>; // activate only on layer 0,1,2,3
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
         scale-multiplier = <1>; // CPI multiplied by this value
         scale-divisor = <1>; // chosenPI divided by this value
-        bindings = <&ib_toggle_layer 4>; // auto toggle layer 4 when mouse moves
+        bindings = <&ib_toggle_layer Mouse>; // auto toggle layer 4 when mouse moves
+    };
+
+    trackball_snipe_listener {
+        compatible = "zmk,input-behavior-listener";   
+        device = <&vtrackball>;
+        layers = <>; // never activates for now
+        evt-type = <INPUT_EV_REL>;
+        x-input-code = <INPUT_REL_X>;
+        y-input-code = <INPUT_REL_Y>;
+        scale-multiplier = <1>;
+        scale-divisor = <4>; // CPI becomes 1/4
     };
 
     trackball_scroll_listener {
         compatible = "zmk,input-behavior-listener";
         device = <&vtrackball>;
-        layers = <5>; // activate only on Scroll layer
+        layers = <Scroll>; // activate only on layer 5
         evt-type = <INPUT_EV_REL>;            
         x-input-code = <INPUT_REL_MISC>;
         y-input-code = <INPUT_REL_WHEEL>;
