@@ -42,7 +42,7 @@
     trackball_listener {
         compatible = "zmk,input-behavior-listener";
         device = <&vtrackball>;
-        layers = <Base Num Sym Nav>; // activate only on layer 0,1,2,3
+        layers = <Base Num Sym Nav Mouse Game>; // activate only on layer 0,1,2,3,4,6
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
