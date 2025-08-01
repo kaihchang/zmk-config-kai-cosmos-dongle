@@ -275,7 +275,7 @@
             label = "Mouse";
             display-name = "Mouse";
             bindings = <
-&kp LC(X)  &kp LC(C)       &kp LC(V)  &mkp MB4         &mkp MB5                                       &mkp MB1  &mkp MB2        &mkp MB3         &mkp MB3           &to 0
+&kp LC(X)  &kp LC(C)       &kp LC(V)  &mkp MB4         &mkp MB5                                       &mkp MB1  &mkp MB2        &mkp MB3         &none              &to 0
 &none      &msc SCRL_UP    &mkp MB1   &mkp MB2         &kp DEL                                        &mkp MB2  &msc SCRL_UP    &to 5            &none              &none
 &kp LC(X)  &msc SCRL_DOWN  &mkp MB3   &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)                              &to 5     &msc SCRL_DOWN  &none            &none              &none
            &kp LC(C)       &kp LC(V)  &to 0            &kp LSHIFT         &kp LEFT_CONTROL  &mkp MB1  &mkp MB3  &none           &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)
@@ -286,10 +286,10 @@
             label = "Scroll";
             display-name = "Scroll";
             bindings = <
-&none  &none  &none     &mkp MB4         &mkp MB5                             &mkp MB1  &mkp MB2  &msc SCRL_UP    &mkp MB3           &bootloader
-&none  &none  &mkp MB1  &mkp MB2         &kp DEL                              &mkp MB2  &none     &msc SCRL_DOWN  &none              &none
-&none  &none  &mkp MB3  &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)                    &to 4     &none     &none           &none              &none
-       &none  &none     &to 0            &kp LSHIFT         &kp LEFT_CONTROL  &mkp MB1  &mkp MB3  &none           &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)
+&bootloader  &none  &none     &mkp MB4         &mkp MB5                                       &mkp MB1  &mkp MB2  &mkp MB3         &none              &none
+&none        &none  &mkp MB1  &mkp MB2         &kp DEL                                        &mkp MB2  &none     &to 4            &none              &none
+&none        &none  &mkp MB3  &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)                              &to 4     &none     &none            &none              &none
+             &none  &none     &to 0            &kp LSHIFT         &kp LEFT_CONTROL  &mkp MB1  &mkp MB3  &none     &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)
             >;
         };
 
