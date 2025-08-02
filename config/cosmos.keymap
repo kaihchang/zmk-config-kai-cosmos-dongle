@@ -48,7 +48,7 @@
         y-input-code = <INPUT_REL_Y>;
         scale-multiplier = <1>; // CPI multiplied by this value
         scale-divisor = <1>; // chosenPI divided by this value
-        bindings = <&ib_toggle_layer Mouse>; // auto toggle layer 4 when mouse moves
+        // bindings = <&ib_toggle_layer Mouse>; // auto toggle layer 4 when mouse moves
     };
 
     trackball_snipe_listener {
@@ -275,7 +275,7 @@
 &kp LC(X)  &kp LC(C)  &kp LC(V)  &mkp MB4         &mkp MB5                                       &mkp MB1  &mkp MB2        &mkp MB3         &none              &to 0
 &none      &to 5      &mkp MB1   &mkp MB2         &kp DEL                                        &mkp MB2  &msc SCRL_UP    &to 5            &none              &none
 &kp LC(X)  &none      &mkp MB3   &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)                              &to 5     &msc SCRL_DOWN  &none            &none              &none
-           &kp LC(C)  &kp LC(V)  &to 0            &kp LSHIFT         &kp LEFT_CONTROL  &mkp MB1  &mkp MB3  &none           &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)
+           &kp LC(C)  &kp LC(V)  &to 0            &kp LSHIFT         &kp LEFT_CONTROL  &mkp MB1  &mkp MB3  &to 0           &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)
             >;
         };
 
@@ -286,7 +286,7 @@
 &bootloader  &none  &none     &mkp MB4         &mkp MB5                                       &mkp MB1  &mkp MB2  &mkp MB3         &none              &none
 &none        &to 4  &mkp MB1  &mkp MB2         &kp DEL                                        &mkp MB2  &none     &to 4            &none              &none
 &none        &none  &mkp MB3  &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)                              &to 4     &none     &none            &none              &none
-             &none  &none     &to 0            &kp LSHIFT         &kp LEFT_CONTROL  &mkp MB1  &mkp MB3  &none     &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)
+             &none  &none     &to 0            &kp LSHIFT         &kp LEFT_CONTROL  &mkp MB1  &mkp MB3  &to 0     &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)
             >;
         };
 
@@ -294,10 +294,10 @@
             label = "Game";
             display-name = "Game";
             bindings = <
-&kp Q    &kp W  &kp E  &kp R    &kp T                               &to 0  &kp U     &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp F12
-&kp TAB  &kp A  &kp W  &kp D    &kp G                               &kp H  &kp LEFT  &kp UP           &kp RIGHT          &kp LSHIFT
-&kp Z    &kp X  &kp S  &kp V    &kp B                               &kp N  &kp M     &kp DOWN         &kp TAB            &studio_unlock
-         &kp F  &kp C  &kp ESC  &kp SPACE  &kp LEFT_SHIFT  &kp F12  &kp Z  &kp X     &kp ENTER        &kp ESC
+&kp Q    &kp W  &kp E  &kp R    &kp T                             &to 0  &kp U     &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp F12
+&kp TAB  &kp A  &kp W  &kp D    &kp G                             &kp H  &kp LEFT  &kp UP           &kp RIGHT          &kp LSHIFT
+&kp Z    &kp X  &kp S  &kp V    &kp B                             &kp N  &kp M     &kp DOWN         &kp TAB            &studio_unlock
+         &kp F  &kp C  &kp ESC  &kp SPACE  &kp LEFT_SHIFT  &kp X  &kp Z  &to 0     &kp ENTER        &kp ESC
             >;
         };
 
