@@ -6,6 +6,8 @@ manifest:
       url-base: https://github.com/petejohanson
     - name: badjeff
       url-base: https://github.com/badjeff
+    - name: Genteure
+      url-base: https://github.com/Genteure
     # Additional modules containing boards/shields/custom code can be listed here as well
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
   projects:
@@ -13,6 +15,9 @@ manifest:
       remote: petejohanson
       revision: feat/pointers-with-input-processors
       import: app/west.yml
+    - name: zmk
+      remote: Genteure
+      revision: feat/battery-reporting
     - name: zmk-pmw3610-driver
       remote: badjeff
       revision: main
