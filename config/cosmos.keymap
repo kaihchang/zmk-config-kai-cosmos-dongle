@@ -272,10 +272,10 @@
             label = "Mouse";
             display-name = "Mouse";
             bindings = <
-&kp LC(X)  &kp LC(C)  &kp LC(V)  &mkp MB4         &mkp MB5                                       &mkp MB1  &mkp MB2        &mkp MB3         &none              &to 0
-&none      &to 5      &mkp MB1   &mkp MB2         &kp DEL                                        &mkp MB2  &msc SCRL_UP    &to 5            &none              &none
-&kp LC(X)  &none      &mkp MB3   &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)                              &to 5     &msc SCRL_DOWN  &none            &none              &none
-           &kp LC(C)  &kp LC(V)  &to 0            &kp LSHIFT         &kp LEFT_CONTROL  &mkp MB1  &mkp MB3  &to 0           &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)
+&kp ESC    &kp LC(W)   &kp LC(T)  &mkp MB4         &mkp MB5                                       &mkp MB1  &mkp MB2        &mkp MB3         &none              &to 0
+&none      &to 5       &mkp MB1   &mkp MB2         &kp DEL                                        &mkp MB2  &msc SCRL_UP    &to 5            &none              &none
+&kp LC(X)  &kp LA(F4)  &mkp MB3   &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)                              &to 5     &msc SCRL_DOWN  &none            &none              &none
+           &kp LC(C)   &kp LC(V)  &to 0            &kp LSHIFT         &kp LEFT_CONTROL  &mkp MB1  &mkp MB3  &to 0           &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)
             >;
         };
 
@@ -283,10 +283,10 @@
             label = "Scroll";
             display-name = "Scroll";
             bindings = <
-&bootloader  &none  &none     &mkp MB4         &mkp MB5                                       &mkp MB1  &mkp MB2  &mkp MB3         &none              &none
-&none        &to 4  &mkp MB1  &mkp MB2         &kp DEL                                        &mkp MB2  &none     &to 4            &none              &none
-&none        &none  &mkp MB3  &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)                              &to 4     &none     &none            &none              &none
-             &none  &none     &to 0            &kp LSHIFT         &kp LEFT_CONTROL  &mkp MB1  &mkp MB3  &to 0     &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)
+&kp ESC    &kp LC(W)   &kp LC(T)  &mkp MB4         &mkp MB5                                       &mkp MB1  &mkp MB2  &mkp MB3         &none              &to 0
+&none      &to 4       &mkp MB1   &mkp MB2         &kp DEL                                        &mkp MB2  &none     &to 4            &none              &none
+&kp LC(X)  &kp LA(F4)  &mkp MB3   &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)                              &to 4     &none     &none            &none              &bootloader
+           &kp LC(C)   &kp LC(V)  &to 0            &kp LSHIFT         &kp LEFT_CONTROL  &mkp MB1  &mkp MB3  &to 0     &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)
             >;
         };
 
