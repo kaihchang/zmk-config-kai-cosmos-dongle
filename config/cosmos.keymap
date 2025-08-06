@@ -283,10 +283,10 @@
             label = "Scroll";
             display-name = "Scroll";
             bindings = <
-&kp ESC    &kp LC(W)   &kp LC(T)  &mkp MB4         &mkp MB5                                       &mkp MB1  &mkp MB2  &mkp MB3         &none              &to 0
-&none      &to 4       &mkp MB1   &mkp MB2         &kp DEL                                        &mkp MB2  &none     &to 4            &none              &none
-&kp LC(X)  &kp LA(F4)  &mkp MB3   &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)                              &to 4     &none     &none            &none              &bootloader
-           &kp LC(C)   &kp LC(V)  &to 0            &kp LSHIFT         &kp LEFT_CONTROL  &mkp MB1  &mkp MB3  &to 0     &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)
+&kp C_PLAY_PAUSE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &mkp MB4         &mkp MB5                                       &mkp MB1  &mkp MB2  &mkp MB3         &none              &to 0
+&kp ENTER         &to 4              &mkp MB1         &mkp MB2         &kp DEL                                        &mkp MB2  &to 4     &to 4            &none              &none
+&kp LC(X)         &kp LA(F4)         &mkp MB3         &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)                              &mkp MB3  &to 4     &none            &none              &bootloader
+                  &kp LC(C)          &kp LC(V)        &to 0            &kp LSHIFT         &kp LEFT_CONTROL  &mkp MB1  &to 4     &to 0     &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)
             >;
         };
 
