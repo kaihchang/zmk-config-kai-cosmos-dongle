@@ -228,10 +228,10 @@
             label = "Base";
             display-name = "Base";
             bindings = <
-&kp Q           &kp W           &kp E               &kp R        &kp T                             &kp Y        &kp U  &kp I                               &kp O                              &kp P
-&mt LEFT_GUI A  &mt LEFT_ALT S  &mt LEFT_CONTROL D  &kp F        &kp G                             &kp H        &kp J  &mt RIGHT_CONTROL K                 &mt RIGHT_ALT L                    &mt RIGHT_GUI SQT
-&kp Z           &kp X           &kp C               &kp V        &kp B                             &kp N        &kp M  &holdtap_comma LA(LC(COMMA)) COMMA  &holdtap_period LG(PERIOD) PERIOD  &kp FSLH
-                &kp LC(Z)       &kp LC(Y)           &lt 1 ENTER  &kp LSHIFT  &kp LS(ENTER)  &to 4  &lt 3 SPACE  &mo 2  &msc SCRL_UP                        &msc SCRL_DOWN
+&kp Q           &kp W           &kp E               &kp R        &kp T                     &kp Y        &kp U  &kp I                               &kp O                              &kp P
+&mt LEFT_GUI A  &mt LEFT_ALT S  &mt LEFT_CONTROL D  &kp F        &kp G                     &kp H        &kp J  &mt RIGHT_CONTROL K                 &mt RIGHT_ALT L                    &mt RIGHT_GUI SQT
+&kp Z           &kp X           &kp C               &kp V        &kp B                     &kp N        &kp M  &holdtap_comma LA(LC(COMMA)) COMMA  &holdtap_period LG(PERIOD) PERIOD  &kp FSLH
+                &kp LC(Z)       &kp LC(Y)           &lt 1 ENTER  &kp LSHIFT  &to 4  &to 4  &lt 3 SPACE  &mo 2  &msc SCRL_UP                        &msc SCRL_DOWN
             >;
         };
 
