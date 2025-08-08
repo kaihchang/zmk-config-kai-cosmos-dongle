@@ -11,3 +11,5 @@ What's good about ZMK dongles?<br/>
 Surely there's something bad?<br/>
 - Extra cost for a spare MCU, seeeduino nrf52840 sense in my case here.<br/>
 - Takes up an extra USB slot on your device.
+
+Recommend setting CONFIG_PMW3610_REPORT_INTERVAL_MIN to only 8 if MCU is using chip antennae (125Hz) instead of PCB antennae (250Hz).
