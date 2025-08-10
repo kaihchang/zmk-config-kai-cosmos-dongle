@@ -2,11 +2,10 @@
 #include "cosmos_3610.dtsi"
 #include "cosmos-layouts.dtsi"
 #include <input/processors.dtsi>
-#include <zmk/dt-bindings/pointer.h>
 #include <behaviors/input_gestures_accel.dtsi>
 
 &pointer_accel {
-	input-type = <ZMK_POINTER_INPUT_TYPE_MOUSE>;
+	input-type = <INPUT_EV_REL>;
 	track-remainders;             // Accumulate fractional movements
 	min-factor = <700>;          // 0.7x at very slow speeds
 	max-factor = <3000>;         // 3.0x at fast speeds
@@ -65,7 +64,4 @@
 
 &trackball {
     status = "okay";
-	input-processors = <
-		&pointer_accel // acceleration processor
-	>;
 };
