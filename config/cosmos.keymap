@@ -44,6 +44,10 @@
         device = <&vtrackball>;
         layers = <Base Num Sym Nav Mouse Game>; // activate only on layer 0,1,2,3,4,6
         evt-type = <INPUT_EV_REL>;
+        input-processors = <
+            &pointer_accel      // Acceleration processor
+            &zip_xy_transform
+        >;
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
         scale-multiplier = <1>; // CPI multiplied by this value
@@ -67,6 +71,10 @@
         device = <&vtrackball>;
         layers = <Scroll>; // activate only on layer 5
         evt-type = <INPUT_EV_REL>;
+        input-processors = <
+            &pointer_accel      // Acceleration processor
+            &zip_xy_transform
+        >;
         x-input-code = <INPUT_REL_MISC>;
         y-input-code = <INPUT_REL_WHEEL>;
         y-invert;
