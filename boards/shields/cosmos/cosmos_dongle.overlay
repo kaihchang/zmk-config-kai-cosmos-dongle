@@ -2,8 +2,6 @@
 
 #include "cosmos.dtsi"
 #include "cosmos-layouts.dtsi"
-#include <input/processors.dtsi>
-#include <behaviors/input_gestures_accel.dtsi>
 
 &physical_layout0 {
     transform = <&default_transform>;

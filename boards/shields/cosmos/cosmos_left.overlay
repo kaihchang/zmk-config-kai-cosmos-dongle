@@ -1,8 +1,6 @@
 #include "cosmos.dtsi"
 #include "cosmos_3610.dtsi"
 #include "cosmos-layouts.dtsi"
-#include <input/processors.dtsi>
-#include <behaviors/input_gestures_accel.dtsi>
 
 / {
 	chosen {

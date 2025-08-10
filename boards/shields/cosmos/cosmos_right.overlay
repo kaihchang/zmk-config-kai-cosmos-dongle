@@ -5,7 +5,7 @@
 #include <behaviors/input_gestures_accel.dtsi>
 
 &pointer_accel {
-	input-type = <INPUT_EV_REL>;
+	input-type = <INPUT_EV_REL>;  // For relative input devices
 	track-remainders;             // Accumulate fractional movements
 	min-factor = <700>;          // 0.7x at very slow speeds
 	max-factor = <3000>;         // 3.0x at fast speeds
