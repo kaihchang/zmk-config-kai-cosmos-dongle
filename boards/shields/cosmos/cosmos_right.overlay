@@ -4,10 +4,6 @@
 #include <input/processors.dtsi>
 #include <behaviors/input_gestures_accel.dtsi>
 
-&default_transform {
-	col-offset = <5>;
-};
-
 &pointer_accel {
 	input-type = <INPUT_EV_REL>;  // For relative input devices
 	track-remainders;             // Accumulate fractional movements
@@ -37,6 +33,10 @@
 		device = <&trackball>;
 		relay-channel = <102>;
 	};
+};
+
+&default_transform {
+	col-offset = <5>;
 };
 
 &kscan0 {
