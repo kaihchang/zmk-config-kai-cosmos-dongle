@@ -2,7 +2,7 @@
 #include "cosmos_3610.dtsi"
 #include "cosmos-layouts.dtsi"
 #include <input/processors.dtsi>
-#include <dt-bindings/zmk/pointer.h>
+#include <zmk/dt-bindings/zmk/pointer.h>
 #include <behaviors/input_gestures_accel.dtsi>
 
 &pointer_accel {
