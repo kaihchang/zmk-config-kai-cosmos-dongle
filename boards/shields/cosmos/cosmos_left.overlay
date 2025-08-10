@@ -1,5 +1,5 @@
 #include "cosmos.dtsi"
-#include "cosmos_3610.dtsi"
+#include "pmw3610.dtsi"
 #include "cosmos-layouts.dtsi"
 
 / {
