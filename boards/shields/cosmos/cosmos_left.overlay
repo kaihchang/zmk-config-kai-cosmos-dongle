@@ -2,6 +2,21 @@
 #include "cosmos_3610.dtsi"
 #include "cosmos-layouts.dtsi"
 
+/ {
+	chosen {
+		zmk,kscan = &kscan0;
+	};
+
+	kscan0: kscan {
+		compatible = "zmk,kscan-gpio-matrix";
+		wakeup-source;
+	};
+
+	vtrackball: virtual_input_trackball {
+		compatible = "zmk,virtual-input";
+	};
+};
+
 &kscan0 {
 	diode-direction = "col2row";
 		
@@ -19,19 +34,4 @@
 		, <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row_2_left P0.11
 		, <&gpio1  0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row_3_left P1.00
 		;
-};
-
-/ {
-	chosen {
-		zmk,kscan = &kscan0;
-	};
-
-	kscan0: kscan {
-		compatible = "zmk,kscan-gpio-matrix";
-		wakeup-source;
-	};
-
-	vtrackball: virtual_input_trackball {
-		compatible = "zmk,virtual-input";
-	};
 };
