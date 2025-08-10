@@ -1,39 +1,6 @@
 #include "cosmos.dtsi"
+#include "pmw3610.dtsi"
 #include "cosmos-layouts.dtsi"
-#include <input/processors.dtsi>
-#include <behaviors/input_gestures_accel.dtsi>
-#include "cosmos_3610.dtsi"
-
-&pointer_accel {
-	input-type = <INPUT_EV_REL>;  // For relative input devices
-	track-remainders;             // Accumulate fractional movements
-	min-factor = <700>;          // 0.7x at very slow speeds
-	max-factor = <3000>;         // 3.0x at fast speeds
-	speed-threshold = <1200>;     // 1200 counts/sec for 1x
-	speed-max = <6000>;          // 6000 counts/sec for max accel
-	acceleration-exponent = <2>;  // Quadratic acceleration curve
-};
-
-&spi0 {
-    status = "disabled";
-    compatible = "nordic,nrf-spim";
-    pinctrl-0 = <&spi0_default>;
-    pinctrl-1 = <&spi0_sleep>;
-    pinctrl-names = "default", "sleep";
-    cs-gpios = <&gpio0 8 GPIO_ACTIVE_LOW>; // NCS P0.08
-
-    trackball: trackball@0 {
-        status = "disabled";
-        compatible = "pixart,pmw3610";
-        reg = <0>; // refers to the first SPI slave device
-        spi-max-frequency = <2000000>;
-        irq-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        cpi = <600>;
-        evt-type = <INPUT_EV_REL>;
-        x-input-code = <INPUT_REL_X>;
-        y-input-code = <INPUT_REL_Y>;
-    };
-};
 
 / {
 	chosen {
@@ -80,9 +47,9 @@
 };
 
 &spi0 {
-    status = "okay";
+    status = "disabled";
 };
 
 &trackball {
-    status = "okay";
+    status = "disabled";
 };

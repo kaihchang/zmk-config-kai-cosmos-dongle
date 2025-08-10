@@ -40,58 +40,15 @@
 
 / {
     trackball_listener {
-        compatible = "zmk,input-behavior-listener";
-        device = <&vtrackball>;
-        layers = <Base Num Sym Nav Mouse Game>; // activate only on layer 0,1,2,3,4,6
-        evt-type = <INPUT_EV_REL>;
-        input-processors = <
-            &pointer_accel      // Acceleration processor
-            &zip_xy_transform
-        >;
-        x-input-code = <INPUT_REL_X>;
-        y-input-code = <INPUT_REL_Y>;
-        scale-multiplier = <1>; // CPI multiplied by this value
-        scale-divisor = <1>; // chosenPI divided by this value
-        // bindings = <&ib_toggle_layer Mouse>; // auto toggle layer 4 when mouse moves
-    };
-
-    trackball_snipe_listener {
-        compatible = "zmk,input-behavior-listener";
-        device = <&vtrackball>;
-        layers = <>; // never activates for now
-        evt-type = <INPUT_EV_REL>;
-        x-input-code = <INPUT_REL_X>;
-        y-input-code = <INPUT_REL_Y>;
-        scale-multiplier = <1>;
-        scale-divisor = <4>; // CPI becomes 1/4
-    };
-
-    trackball_scroll_listener {
-        compatible = "zmk,input-behavior-listener";
-        device = <&vtrackball>;
-        layers = <Scroll>; // activate only on layer 5
-        evt-type = <INPUT_EV_REL>;
-        input-processors = <
-            &pointer_accel      // Acceleration processor
-            &zip_xy_transform
-        >;
-        x-input-code = <INPUT_REL_MISC>;
-        y-input-code = <INPUT_REL_WHEEL>;
-        y-invert;
-        bindings = <&ib_wheel_scaler 1 16>; // scroll speed will be 1/16 of trackball movement
-    };
-
-    ib_wheel_scaler: ib_wheel_scaler {
-        compatible = "zmk,input-behavior-scaler";
-        #binding-cells = <2>; // takes 2 args
-        evt-type = <INPUT_EV_REL>;
-        input-code = <INPUT_REL_WHEEL>;
-    };
-
-    ib_toggle_layer: ib_toggle_layer {
-        compatible = "zmk,input-behavior-tog-layer";
-        #binding-cells = <1>;
-        time-to-live-ms = <800>; // auto toggle for 800 ms
+        compatible = "zmk,input-listener";
+        device = <&trackball>;
+        input-processors =
+            <&zip_xy_scaler 1 1> 
+            // ,<&zip_temp_layer 4 800>; // Switch to auto-mouse temp layer
+        scroll {
+            layers = <5>; // SCROLL
+            input-processors = <&zip_xy_scaler 1 5>, <&zip_xy_to_scroll_mapper>, <&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)>;
+        };
     };
 
     behaviors {
