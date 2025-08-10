@@ -19,10 +19,8 @@
         rows = <0>;
         events = <0>;
     };
-};
 
-/ {
-	vtrackball: virtual_input_trackball {
+    vtrackball: virtual_input_trackball {
 		compatible = "zmk,virtual-input";
 	};
 
