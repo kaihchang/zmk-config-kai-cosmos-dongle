@@ -14,6 +14,31 @@
 	acceleration-exponent = <2>;  // Quadratic acceleration curve
 };
 
+&spi0 {
+    status = "disabled";
+    compatible = "nordic,nrf-spim";
+    pinctrl-0 = <&spi0_default>;
+    pinctrl-1 = <&spi0_sleep>;
+    pinctrl-names = "default", "sleep";
+    cs-gpios = <&gpio0 8 GPIO_ACTIVE_LOW>; // NCS P0.08
+
+    trackball: trackball@0 {
+        status = "disabled";
+        compatible = "pixart,pmw3610";
+        reg = <0>; // refers to the first SPI slave device
+        spi-max-frequency = <2000000>;
+        irq-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        cpi = <600>;
+        evt-type = <INPUT_EV_REL>;
+        input-processors = <
+            &pointer_accel      // Acceleration processor
+            &zip_xy_transform
+        >;
+        x-input-code = <INPUT_REL_X>;
+        y-input-code = <INPUT_REL_Y>;
+    };
+};
+
 / {
 	chosen {
 		zmk,kscan = &kscan0;
