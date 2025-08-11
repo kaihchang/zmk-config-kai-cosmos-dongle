@@ -1,14 +1,8 @@
-if SHIELD_COSMOS_DONGLE
+if SHIELD_COSMOS_DONGLE || SHIELD_COSMOS_LEFT || SHIELD_COSMOS_RIGHT
 
-config ZMK_KEYBOARD_NAME
-	default "Kai Cosmos"
-
-config ZMK_SPLIT_ROLE_CENTRAL
+config ZMK_SPLIT
 	default y
-
-config SPI
-	default y
-
+	
 endif
 
 if SHIELD_COSMOS_DONGLE || SHIELD_COSMOS_RIGHT
@@ -18,9 +12,19 @@ config ZMK_POINTING
 
 endif
 
-if SHIELD_COSMOS_DONGLE || SHIELD_COSMOS_LEFT || SHIELD_COSMOS_RIGHT
+if SHIELD_COSMOS_DONGLE
 
-config ZMK_SPLIT
+config ZMK_KEYBOARD_NAME
+	default "Kai Cosmos"
+
+config ZMK_SPLIT_ROLE_CENTRAL
 	default y
-	
+
+endif
+
+if SHIELD_COSMOS_RIGHT
+
+config SPI
+	default y
+
 endif
