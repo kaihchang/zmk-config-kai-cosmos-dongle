@@ -21,7 +21,7 @@
     };
 
     // Input Listners
-    split_inputs_0 {
+    split_inputs {
         #address-cells = <1>;
         #size-cells = <0>;
 
@@ -33,7 +33,7 @@
         trackball_listener: trackball_listener {
             compatible = "zmk,input-listener";
             status = "disabled";
-            device = <&trackball>;
+            device = <&trackball_split>;
         };
     };
 };
