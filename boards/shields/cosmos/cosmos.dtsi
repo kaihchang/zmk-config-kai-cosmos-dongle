@@ -19,21 +19,4 @@
                 RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4)    RC(3,5) RC(3,6) RC(3,7) RC(3,8) RC(3,9)
         >;
     };
-
-    // Input Listners
-    split_inputs {
-        #address-cells = <1>;
-        #size-cells = <0>;
-
-        trackball_split: trackball_split@0 {
-            compatible = "zmk,input-split";
-            reg = <0>;
-        };
-
-        trackball_listener: trackball_listener {
-            compatible = "zmk,input-listener";
-            status = "disabled";
-            device = <&trackball_split>;
-        };
-    };
 };
