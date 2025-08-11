@@ -34,6 +34,10 @@
 
 &spi0 {
     status = "okay";
+    compatible = "nordic,nrf-spim";
+    pinctrl-0 = <&spi0_default>;
+    pinctrl-1 = <&spi0_sleep>;
+    pinctrl-names = "default", "sleep";
     cs-gpios = <&gpio0 8 GPIO_ACTIVE_LOW>; // nCS P0.08
 
     trackball: trackball@0 {
