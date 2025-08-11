@@ -32,7 +32,7 @@
     };
 };
 
-&pro_micro_spi {
+&spi0 {
     status = "okay";
     cs-gpios = <&gpio0 8 GPIO_ACTIVE_LOW>; // nCS P0.08
 
