@@ -1,5 +1,7 @@
 #include "cosmos.dtsi"
 #include "cosmos-layouts.dtsi"
+#include <input/processors.dtsi>
+#include <dt-bindings/zmk/matrix_transform.h>
 
 / {
 	chosen {
@@ -30,4 +32,3 @@
 		, <&gpio1  0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row_3_left P1.00
 		;
 };
-

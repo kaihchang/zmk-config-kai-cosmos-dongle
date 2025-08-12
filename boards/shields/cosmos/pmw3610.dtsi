@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 // For the peripheral side that has SPI pointing device with it.
 // What's here: pinctrl & input device
+=======
+// For the peripheral side that has SPI pointing device with it
+>>>>>>> 222b2a923d09034d8761d0ca8e402523c752279a
 
 #define INPUT_EV_KEY 0x01               /**< Key event */
 #define INPUT_EV_REL 0x02               /**< Relative coordinate event */
@@ -36,7 +40,11 @@
 
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 
+<<<<<<< HEAD
 &spi0 { // input device node (SPI)
+=======
+&spi0 { // SPI device node
+>>>>>>> 222b2a923d09034d8761d0ca8e402523c752279a
     status = "okay";
     compatible = "nordic,nrf-spim";
     pinctrl-0 = <&spi0_default>;
@@ -57,10 +65,25 @@
 
         // force-awake will cause warping and cursor jumping. Don't recommend now.
     };
+<<<<<<< HEAD
 
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
         device = <&trackball>;
     };
+=======
+};
+
+/ {
+  trackball_listener {
+    compatible = "zmk,input-listener";
+    device = <&trackball>;
+  };
+};
+
+&trackball_split {
+    device = <&trackball>;
+    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
+>>>>>>> 222b2a923d09034d8761d0ca8e402523c752279a
 };

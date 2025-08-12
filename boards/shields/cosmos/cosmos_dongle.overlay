@@ -20,7 +20,6 @@
         rows = <0>;
         events = <0>;
     };
-};
 
 // enable input listener that was disabled in pmw3610.dtsi
 &trackball_listener {
