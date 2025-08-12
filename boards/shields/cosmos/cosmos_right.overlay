@@ -1,6 +1,7 @@
 #include "cosmos.dtsi"
 #include "pmw3610.dtsi"
 #include "cosmos-layouts.dtsi"
+#include <input/processors.dtsi>
 
 / {
 	chosen {
@@ -23,6 +24,19 @@
 			<&gpio0  9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>; // row_3_right P0.09
 		wakeup-source;
 	};
+
+	trackball_listener: trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball>;
+		input-processors = <&zip_xy_scaler 1 1>;
+		scroll {
+            layers = <5>; // SCROLL
+            input-processors =
+                <&zip_xy_scaler 1 5>,
+                <&zip_xy_to_scroll_mapper>,
+                <&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)>;
+        };
+    };
 };
 
 &default_transform {
