@@ -28,8 +28,3 @@
 &default_transform {
 	col-offset = <5>;
 };
-
-// child node of input device from pmw3610.dtsi
-&trackball_right {
-	device = <&trackball>;
-}
