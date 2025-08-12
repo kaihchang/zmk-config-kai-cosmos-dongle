@@ -1,6 +1,5 @@
 #include "cosmos.dtsi"
 #include "pmw3610.dtsi"
-#include "pmw3610.dtsi"
 #include "cosmos-layouts.dtsi"
 
 / {
@@ -10,31 +9,24 @@
 
 	kscan0: kscan {
 		compatible = "zmk,kscan-gpio-matrix";
+		diode-direction = "col2row";
+		col-gpios =
+			<&gpio1  6 (GPIO_ACTIVE_HIGH)>, // col_0_right P1.06
+			<&gpio1  4 (GPIO_ACTIVE_HIGH)>, // col_1_right P1.04
+			<&gpio0 11 (GPIO_ACTIVE_HIGH)>, // col_2_right P0.11
+			<&gpio1  0 (GPIO_ACTIVE_HIGH)>, // col_3_right P1.00
+			<&gpio0 24 (GPIO_ACTIVE_HIGH)>; // col_4_right P0.24
+		row-gpios =
+			<&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, // row_0_right P1.13
+			<&gpio1 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, // row_1_right P1.11
+			<&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, // row_2_right P0.10
+			<&gpio0  9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>; // row_3_right P0.09
 		wakeup-source;
 	};
 };
 
 &default_transform {
 	col-offset = <5>;
-};
-
-&kscan0 {
-	diode-direction = "col2row";
-	
-	col-gpios
-		= <&gpio1  6 (GPIO_ACTIVE_HIGH)> // col_0_right P1.06
-		, <&gpio1  4 (GPIO_ACTIVE_HIGH)> // col_1_right P1.04
-		, <&gpio0 11 (GPIO_ACTIVE_HIGH)> // col_2_right P0.11
-		, <&gpio1  0 (GPIO_ACTIVE_HIGH)> // col_3_right P1.00
-		, <&gpio0 24 (GPIO_ACTIVE_HIGH)> // col_4_right P0.24
-		;
-
-	row-gpios
-		= <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row_0_right P1.13
-		, <&gpio1 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row_1_right P1.11
-		, <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row_2_right P0.10
-		, <&gpio0  9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row_3_right P0.09
-		;
 };
 
 // child node of input device from pmw3610.dtsi

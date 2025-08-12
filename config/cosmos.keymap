@@ -41,21 +41,6 @@
 &sl { release-after-ms = <1500>; };
 
 / {
-    trackball_listener {
-        compatible = "zmk,input-listener";
-        device = <&trackball>;
-        input-processors =
-            <&zip_xy_scaler 1 1>;
-            // ,<&zip_temp_layer 4 800>; // Switch to auto-mouse temp layer
-        scroll {
-            layers = <5>; // SCROLL
-            input-processors =
-                <&zip_xy_scaler 1 5>,
-                <&zip_xy_to_scroll_mapper>,
-                <&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)>;
-        };
-    };
-
     behaviors {
         holdtap_comma: holdtap_comma {
             compatible = "zmk,behavior-hold-tap";
