@@ -41,7 +41,7 @@
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
-        scroll-layer = <5>;
+        scroll-layers = <5>;
         
         // force-awake will cause warping and cursor jumping. Don't recommend now.
     };
