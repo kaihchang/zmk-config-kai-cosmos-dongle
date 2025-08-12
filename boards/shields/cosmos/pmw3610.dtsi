@@ -16,6 +16,7 @@
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
+            /* main role: configure P0.17 as SPI clock, P0.20 as SPI MOSI, P0.20 as SPI MISO */
             psels = <NRF_PSEL(SPIM_SCK,  0, 17)>, // SCLK P0.17
                     <NRF_PSEL(SPIM_MOSI, 0, 20)>, // SDIO P0.20
                     <NRF_PSEL(SPIM_MISO, 0, 20)>;
@@ -31,6 +32,8 @@
         };
     };
 };
+
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 
 &spi0 {
     status = "okay";
@@ -50,7 +53,16 @@
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
+
+        // force-awake will cause warping and cursor jumping. Don't recommend now.
     };
+};
+
+/ {
+  trackball_listener {
+    compatible = "zmk,input-listener";
+    device = <&trackball>;
+  };
 };
 
 &trackball_split {
