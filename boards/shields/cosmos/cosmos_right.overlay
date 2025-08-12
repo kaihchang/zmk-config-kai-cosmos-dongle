@@ -2,6 +2,7 @@
 #include "pmw3610.dtsi"
 #include "cosmos-layouts.dtsi"
 #include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
 
 / {
 	chosen {
