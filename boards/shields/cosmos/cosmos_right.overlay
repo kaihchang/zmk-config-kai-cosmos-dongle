@@ -1,5 +1,5 @@
 #include "cosmos.dtsi"
-#include "cosmos_3610.dtsi"
+#include "pmw3610.dtsi"
 #include "cosmos-layouts.dtsi"
 
 / {
@@ -10,16 +10,6 @@
 	kscan0: kscan {
 		compatible = "zmk,kscan-gpio-matrix";
 		wakeup-source;
-	};
-
-	vtrackball: virtual_input_trackball {
-		compatible = "zmk,virtual-input";
-	};
-
-	input_relay_config_trackball {
-		compatible = "zmk,split-peripheral-input-relay";
-		device = <&trackball>;
-		relay-channel = <102>;
 	};
 };
 
@@ -46,10 +36,7 @@
 		;
 };
 
-&spi0 {
-    status = "okay";
-};
-
-&trackball {
-    status = "okay";
-};
+// child node of input device from pmw3610.dtsi
+&trackball_right {
+	device = <&trackball>;
+}

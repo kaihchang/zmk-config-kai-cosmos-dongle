@@ -1,5 +1,4 @@
 #include "cosmos.dtsi"
-#include "cosmos_3610.dtsi"
 #include "cosmos-layouts.dtsi"
 
 / {
@@ -10,10 +9,6 @@
 	kscan0: kscan {
 		compatible = "zmk,kscan-gpio-matrix";
 		wakeup-source;
-	};
-
-	vtrackball: virtual_input_trackball {
-		compatible = "zmk,virtual-input";
 	};
 };
 

@@ -1,6 +1,7 @@
 // Can't have the kscan0 here, that one's physical
 
 #include "cosmos.dtsi"
+#include "pmw3610.dtsi"
 #include "cosmos-layouts.dtsi"
 
 &physical_layout0 {
@@ -21,14 +22,7 @@
     };
 };
 
-/ {
-	vtrackball: virtual_input_trackball {
-		compatible = "zmk,virtual-input";
-	};
-
-	input_relay_config_trackball {
-		compatible = "zmk,split-peripheral-input-relay";
-		device = <&vtrackball>;
-		relay-channel = <102>;
-	};
+// enable input listener that was disabled in pmw3610.dtsi
+&trackball_listener {
+    status = "okay";
 };
