@@ -21,6 +21,8 @@
     };
 };
 
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+
 &spi0 { // input device node (SPI)
     status = "okay";
     compatible = "nordic,nrf-spim";
