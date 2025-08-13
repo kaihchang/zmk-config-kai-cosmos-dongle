@@ -9,12 +9,6 @@
 	col-offset = <5>;
 };
 
-&trackball_split_listener { // local trackball input split device child node
-	device = <&trackball>;
-	input-processors =
-		<&zip_xy_scaler 1 1>;
-};
-
 / {
 	chosen {
 		zmk,kscan = &kscan0;
@@ -50,4 +44,10 @@
                 <&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)>;
         };
     };
+};
+
+&trackball_split_listener { // local trackball input split device child node
+	device = <&trackball>;
+	input-processors =
+		<&zip_xy_scaler 1 1>;
 };
