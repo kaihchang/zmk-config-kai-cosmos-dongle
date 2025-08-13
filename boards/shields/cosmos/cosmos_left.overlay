@@ -1,6 +1,10 @@
 #include "cosmos.dtsi"
 #include "cosmos-layouts.dtsi"
 
+&trackball_split_input { // local trackball *split* input device child node
+	device = <&trackball>;
+};
+
 / {
 	chosen {
 		zmk,kscan = &kscan0;
