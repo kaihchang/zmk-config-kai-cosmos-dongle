@@ -1,7 +1,10 @@
-if SHIELD_COSMOS_DONGLE || SHIELD_COSMOS_LEFT || SHIELD_COSMOS_RIGHT
+if SHIELD_COSMOS_DONGLE || SHIELD_COSMOS_RIGHT
 
 config ZMK_SPLIT
 	default y
+
+config ZMK_POINTING
+    default y
 
 endif
 
@@ -13,9 +16,6 @@ config ZMK_KEYBOARD_NAME
 config ZMK_SPLIT_ROLE_CENTRAL
 	default y
 
-config ZMK_POINTING
-    default y
-
 endif
 
 if SHIELD_COSMOS_RIGHT
@@ -23,7 +23,11 @@ if SHIELD_COSMOS_RIGHT
 config SPI
     default y
 
-config ZMK_POINTING
-    default y
+endif
+
+if SHIELD_COSMOS_LEFT
+
+config ZMK_SPLIT
+	default y
 
 endif
