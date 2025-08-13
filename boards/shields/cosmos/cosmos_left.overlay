@@ -5,6 +5,10 @@
  Complains about not having "input property in peripheral input splits, but also don't recognise <&trackball> if I assign one. Hmmm.
 */
 
+&trackball_split_input { // local trackball *split* input device child node
+	device = <&trackball>;
+};
+
 / {
 	chosen {
 		zmk,kscan = &kscan0;
