@@ -1,6 +1,5 @@
 #include "cosmos.dtsi"
 #include "cosmos-layouts.dtsi"
-#include <input/processors.dtsi>
 #include <dt-bindings/zmk/matrix_transform.h>
 
 / {
