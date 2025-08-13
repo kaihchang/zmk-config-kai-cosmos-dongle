@@ -1,7 +1,6 @@
 // Can't have the kscan0 here, that one's physical
 
 #include "cosmos.dtsi"
-#include "pmw3610.dtsi"
 #include "cosmos-layouts.dtsi"
 
 &physical_layout0 {

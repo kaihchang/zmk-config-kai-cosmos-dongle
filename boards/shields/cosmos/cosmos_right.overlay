@@ -4,9 +4,14 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 
-
 &default_transform {
 	col-offset = <5>;
+};
+
+&trackball_split_input { // local trackball *split* input device child node
+	device = <&trackball>;
+	input-processors =
+		<&zip_xy_scaler 1 1>;
 };
 
 / {
@@ -44,10 +49,4 @@
                 <&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)>;
         };
     };
-};
-
-&trackball_split_listener { // local trackball input split device child node
-	device = <&trackball>;
-	input-processors =
-		<&zip_xy_scaler 1 1>;
 };
