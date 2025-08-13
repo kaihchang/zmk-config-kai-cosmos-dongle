@@ -3,6 +3,7 @@
 #include "cosmos-layouts.dtsi"
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
+#include <behaviors/input_gestures_accel.dtsi>
 
 &default_transform {
 	col-offset = <5>;
@@ -12,6 +13,20 @@
 	device = <&trackball>;
 	input-processors =
 		<&zip_xy_scaler 1 1>;
+};
+
+&pointer_accel { // this needs to be put BEFORE input-listener
+    input-type = <INPUT_EV_REL>;
+    codes = <INPUT_REL_X INPUT_REL_Y>;
+    sensitivity = <1200>;         // 1.2x base sensitivity
+	min-factor = <800>;			  // 0.8x minimum for percision
+    max-factor = <3000>;          // 3.0x maximum acceleration
+    acceleration-exponent = <2>;  // Advanced exponential curve (1-5)
+    y-boost = <1000>;             // 1.0x Y-axis boost for widescreen
+    speed-threshold = <800>;      // Start acceleration at 800 counts/sec
+    speed-max = <3500>;           // Max acceleration at 3500 counts/sec
+    min-factor = <1000>;          // 1.0x minimum (no deceleration)
+    sensor-dpi = <600>;           // 600 DPI sensor (optional, defaults to 800)
 };
 
 / {
@@ -40,7 +55,8 @@
         compatible = "zmk,input-listener";
         device = <&trackball>;
 		input-processors = 
-			<&zip_xy_scaler 1 1>;
+			<&zip_xy_scaler 1 1>,
+			<&pointer_accel>;
 		scroll {
             layers = <5>; // SCROLL
             input-processors =
