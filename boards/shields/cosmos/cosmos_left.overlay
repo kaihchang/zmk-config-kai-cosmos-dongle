@@ -1,6 +1,5 @@
 #include "cosmos.dtsi"
 #include "cosmos-layouts.dtsi"
-#include <dt-bindings/zmk/matrix_transform.h>
 
 / {
 	chosen {
