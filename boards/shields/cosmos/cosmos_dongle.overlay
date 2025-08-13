@@ -1,6 +1,7 @@
 // Can't have the kscan0 here, that one's physical
 
 #include "cosmos.dtsi"
+#include "split_input.dtsi"
 #include "cosmos-layouts.dtsi"
 
 &physical_layout0 {
