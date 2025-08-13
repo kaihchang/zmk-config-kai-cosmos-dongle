@@ -6,6 +6,7 @@
 */
 
 /delete-node/ &trackball_split_input;
+/delete-node/ &trackball_listener;
 
 / {
 	chosen {

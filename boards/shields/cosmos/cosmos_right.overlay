@@ -57,7 +57,7 @@
 			<&zip_xy_scaler 1 1>,
 			<&pointer_accel>;
 		scroll {
-            layers = <SCROLL>;
+            layers = <5>; // SCROLL
             input-processors =
                 <&zip_xy_scaler 1 5>,
                 <&zip_xy_to_scroll_mapper>,
