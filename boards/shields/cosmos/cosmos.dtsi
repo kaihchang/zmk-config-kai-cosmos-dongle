@@ -39,6 +39,6 @@
     trackball_split_listener: trackball_split_listener { // listener for split input device
         compatible = "zmk,input-listener";
         status = "disabled"; // disable for .keymap to add input processors without undefined reference error
-        device = <&trackball_split_input>;ds
+        device = <&trackball_split_input>;
     };
 };
