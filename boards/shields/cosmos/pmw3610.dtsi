@@ -1,6 +1,6 @@
 /* 
     For the *peripheral* side that has SPI pointing device with it. Not even dongle.overlay should have this.
-    What's here: pinctrl & trackball input device node for right & dongle side.
+    What's here: pinctrl & trackball input device node (SPI) for right & dongle side.
 */
 
 &pinctrl {
