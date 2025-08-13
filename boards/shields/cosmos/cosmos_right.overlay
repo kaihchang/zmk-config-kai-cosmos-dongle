@@ -26,7 +26,6 @@
     speed-threshold = <600>;      // Start acceleration at 600 counts/sec
     speed-max = <3500>;           // Max acceleration at 3500 counts/sec
     min-factor = <1000>;          // 1.0x minimum (no deceleration)
-    sensor-dpi = <600>;           // 600 DPI sensor (optional, defaults to 800)
 };
 
 / {
@@ -58,7 +57,7 @@
 			<&zip_xy_scaler 1 1>,
 			<&pointer_accel>;
 		scroll {
-            layers = <5>; // SCROLL
+            layers = <SCROLL>;
             input-processors =
                 <&zip_xy_scaler 1 5>,
                 <&zip_xy_to_scroll_mapper>,
