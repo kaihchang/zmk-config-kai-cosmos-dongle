@@ -1,5 +1,11 @@
-// For the peripheral side that has SPI pointing device with it.
-// What's here: pinctrl & input device
+/* 
+    For the peripheral side that has SPI pointing device with it.
+    What's here: pinctrl & input split device for right & dongle side.
+
+    The input listener that is used by the central side is added here but disabled by default.
+    This is so that keymaps (which are included for both central and peripheral builds) can reference the listener to add input processors without failing with an undefined reference error.
+    About input split device: https://zmk.dev/docs/development/hardware-integration/pointing#shared-configuration-1
+*/
 
 &pinctrl {
     spi0_default: spi0_default {
@@ -43,5 +49,23 @@
         y-input-code = <INPUT_REL_Y>;
         
         // force-awake will cause warping and cursor jumping. Don't recommend now.
+    };
+};
+
+/ {
+    split_inputs { // split input device
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        trackball_split_input: trackball_split_input@0 { // trackball's split input device
+            compatible = "zmk,input-split";
+            reg = <0>;
+        };
+    };
+
+    trackball_split_listener: glidepoint_listener { // listener for split input device
+        compatible = "zmk,input-listener";
+        status = "disabled"; // disable for .keymap to add input processors without undefined reference error
+        device = <&trackball_split_input>;
     };
 };

@@ -8,6 +8,10 @@
     transform = <&default_transform>;
 };
 
+&trackball_split_listener { // local trackball input split device child node, receiving events from the peripheral and raising them locally
+	status = "okay";
+};
+
 / {
     chosen {
         zmk,kscan = &mock_kscan;

@@ -4,6 +4,17 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 
+
+&default_transform {
+	col-offset = <5>;
+};
+
+&trackball_split_listener { // local trackball input split device child node
+	device = <&trackball>;
+	input-processors =
+		<&zip_xy_scaler 1 1>;
+};
+
 / {
 	chosen {
 		zmk,kscan = &kscan0;
@@ -29,7 +40,8 @@
 	trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
-		input-processors = <&zip_xy_scaler 1 1>;
+		input-processors = 
+			<&zip_xy_scaler 1 1>;
 		scroll {
             layers = <5>; // SCROLL
             input-processors =
@@ -38,8 +50,4 @@
                 <&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)>;
         };
     };
-};
-
-&default_transform {
-	col-offset = <5>;
 };
