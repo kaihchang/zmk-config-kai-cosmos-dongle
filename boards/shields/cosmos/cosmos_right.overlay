@@ -24,9 +24,10 @@
     max-factor = <3000>;          // 3.0x maximum acceleration
     acceleration-exponent = <2>;  // Advanced exponential curve (1-5)
     y-boost = <1100>;             // 1.1x Y-axis boost for widescreen
-    speed-threshold = <600>;      // Start acceleration at 600 counts/sec
-    speed-max = <3500>;           // Max acceleration at 3500 counts/sec
+    speed-threshold = <300>;      // Start acceleration at 300 counts/sec
+    speed-max = <1200>;           // Max acceleration at 1200 counts/sec
     min-factor = <1000>;          // 1.0x minimum (no deceleration)
+	sensor-dpi = <600>;
 };
 
 / {
@@ -51,7 +52,7 @@
 		wakeup-source;
 	};
 
-	trackball_listener: trackball_listener {
+	trackball_split_listener: trackball_split_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
 		input-processors = 
