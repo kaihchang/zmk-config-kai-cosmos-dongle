@@ -10,10 +10,12 @@
 	col-offset = <5>;
 };
 
+&spi0 {
+    status = "okay";
+};
+
 &trackball_split_input { // local trackball *split* input device child node
 	device = <&trackball>;
-	input-processors =
-		<&zip_xy_scaler 1 1>;
 };
 
 &pointer_accel { // this needs to be put BEFORE input-listener
@@ -51,19 +53,4 @@
 			<&gpio0  9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>; // row_3_right P0.09
 		wakeup-source;
 	};
-
-	trackball_split_listener: trackball_split_listener {
-        compatible = "zmk,input-listener";
-        device = <&trackball>;
-		input-processors = 
-			<&zip_xy_scaler 1 1>,
-			<&pointer_accel>;
-		scroll {
-            layers = <5>; // SCROLL
-            input-processors =
-                <&zip_xy_scaler 1 5>,
-                <&zip_xy_to_scroll_mapper>,
-                <&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)>;
-        };
-    };
 };
