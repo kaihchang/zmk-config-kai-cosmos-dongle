@@ -2,22 +2,22 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: petejohanson
-      url-base: https://github.com/petejohanson
     - name: badjeff
       url-base: https://github.com/badjeff
-    - name: oleksandrmaslov
-      url-base: https://github.com/oleksandrmaslov
+    - name: nuovotaka
+      url-base: https://github.com/nuovotaka
+
   projects:
     - name: zmk
-      remote: petejohanson
-      revision: feat/pointers-with-input-processors
+      remote: zmkfirmware
+      revision: main
       import: app/west.yml
     - name: zmk-pmw3610-driver
       remote: badjeff
       revision: main
-    - name: zmk-pointing-acceleration
-      remote: oleksandrmaslov
+    - name: zmk-pointing-acceleration-alpha
+      remote: nuovotaka
       revision: main
+
   self:
     path: config
