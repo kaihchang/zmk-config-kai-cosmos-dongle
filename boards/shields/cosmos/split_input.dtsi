@@ -6,18 +6,6 @@
     About input split device: https://zmk.dev/docs/development/hardware-integration/pointing#shared-configuration-1
 */
 
-#include <input/processors.dtsi>
-#include <dt-bindings/zmk/input_transform.h>
-
-// layers
-#define BASE 0
-#define NUM 1
-#define SYM 2
-#define NAV 3
-#define MOUSE 4
-#define SCROLL 5
-#define GAME 6
-
 /{
     split_inputs { // split input devices
         #address-cells = <1>;
@@ -33,16 +21,5 @@
         compatible = "zmk,input-listener";
         status = "disabled"; // disable for .keymap to add input processors without undefined reference error
         device = <&trackball_split_input>;
-
-        input-processors = 
-			<&zip_xy_scaler 1 1>,
-			<&pointer_accel>;
-		scroll {
-            layers = <5>; // SCROLL
-            input-processors =
-                <&zip_xy_scaler 1 5>,
-                <&zip_xy_to_scroll_mapper>,
-                <&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)>;
-        };
     };
 };

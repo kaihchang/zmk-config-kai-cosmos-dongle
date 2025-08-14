@@ -32,6 +32,19 @@
 	sensor-dpi = <600>;
 };
 
+&trackball_split_listener { // local trackball input listener child node
+	input-processors = 
+		<&zip_xy_scaler 1 1>,
+		<&pointer_accel>;
+	scroll {
+		layers = <5>; // SCROLL
+		input-processors =
+			<&zip_xy_scaler 1 5>,
+			<&zip_xy_to_scroll_mapper>,
+			<&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)>;
+	};
+};
+
 / {
 	chosen {
 		zmk,kscan = &kscan0;
