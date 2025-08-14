@@ -37,10 +37,11 @@
 		    <&pointer_accel>;
 	scroll {
 		layers = <5>; // SCROLL
-		input-processors = // none of the processor seem to be working, except for <&zip_xy_to_scroll_mapper>?
-			<&zip_xy_scaler 1 16>, // try to slow way down
-            <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>, // not working?
-			<&zip_xy_to_scroll_mapper>;            
+		input-processors =
+            <&zip_xy_to_scroll_mapper>,
+			<&zip_xy_scaler 1 16>, // slow way down
+            <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
+
 	};
 };
 
