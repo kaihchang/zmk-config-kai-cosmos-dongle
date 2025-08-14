@@ -15,8 +15,8 @@ Surely there's something bad?<br/>
 Recommend setting CONFIG_PMW3610_REPORT_INTERVAL_MIN to only 8 if MCU is using chip antenna (125Hz) instead of PCB antennae (250Hz).
 
 Todo:
-- Scroll layer ✅
 - Dongle ✅
 - ZMK Studio ✅
+- Scroll layer ✅
 - Most frequent transmit (125Hz) ✅
-- Built-in cursor acceleration ❌
+- Built-in cursor acceleration ✅
