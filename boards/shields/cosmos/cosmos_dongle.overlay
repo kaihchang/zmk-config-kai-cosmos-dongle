@@ -38,10 +38,11 @@
 	scroll {
 		layers = <5>; // SCROLL
 		input-processors =
-			<&zip_x_scaler 1 8>,
+			<&zip_x_scaler 1 16>,
             <&zip_y_scaler 1 16>, // max value at 16
-			<&zip_xy_to_scroll_mapper>,
-            <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>;
+            <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>,
+			<&zip_xy_to_scroll_mapper>;            
+        
 	};
 };
 
