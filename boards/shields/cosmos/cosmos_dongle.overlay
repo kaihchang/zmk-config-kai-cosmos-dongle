@@ -37,7 +37,7 @@
         compatible = "zmk,input-processor-acceleration";
         status = "okay";
         #input-processor-cells = <0>;
-    }
+    };
 };
 
 &pointer_accel { // this needs to be put BEFORE input-listener
