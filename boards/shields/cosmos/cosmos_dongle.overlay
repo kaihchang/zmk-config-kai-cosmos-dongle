@@ -8,6 +8,7 @@
 #include "split_input.dtsi"
 #include "cosmos-layouts.dtsi"
 #include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
 #include <behaviors/input_gestures_accel.dtsi>
 
 &physical_layout0 {
@@ -22,11 +23,13 @@
     max-factor = <3000>;          // 3.0x maximum acceleration
     acceleration-exponent = <2>;  // Advanced exponential curve (1-5)
     y-boost = <1100>;             // 1.1x Y-axis boost for widescreen
-    speed-threshold = <300>;      // Start acceleration at 300 counts/sec
+    speed-threshold = <800>;      // Start acceleration at 800 counts/sec
     speed-max = <1200>;           // Max acceleration at 1200 counts/sec
     min-factor = <1000>;          // 1.0x minimum (no deceleration)
 	sensor-dpi = <600>;
 };
+
+/* More about input processors: https://zmk.dev/docs/keymaps/input-processors#input-processors-overview */
 
 &trackball_split_listener { // local trackball input split device child node, receiving events from the peripheral and raising them locally
 	status = "okay";
@@ -36,7 +39,8 @@
 		layers = <5>; // SCROLL
 		input-processors =
 			<&zip_xy_scaler 1 5>,
-			<&zip_xy_to_scroll_mapper>;
+			<&zip_xy_to_scroll_mapper>,
+            <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>;
 	};
 };
 
