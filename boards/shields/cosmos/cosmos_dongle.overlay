@@ -9,10 +9,35 @@
 #include "cosmos-layouts.dtsi"
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
-#include <behaviors/input_gestures_accel.dtsi>
 
 &physical_layout0 {
     transform = <&default_transform>;
+};
+
+/ {
+    chosen {
+        zmk,kscan = &mock_kscan;
+        zmk,physical-layout = &physical_layout0;
+    };
+
+    mock_kscan: kscan_1 {
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
+    };
+
+    pointer_accel: pointer_accel {
+        compatible = "zmk,input-processor-acceleration";
+        status = "okay";
+        #input-processor-cells = <0>;
+    };
+
+    scroll_accel: scroll_accel {
+        compatible = "zmk,input-processor-acceleration";
+        status = "okay";
+        #input-processor-cells = <0>;
+    }
 };
 
 &pointer_accel { // this needs to be put BEFORE input-listener
@@ -55,20 +80,5 @@
 			<&scroll_accel>,
             <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>,
 			<&zip_xy_to_scroll_mapper>;            
-        
 	};
-};
-
-/ {
-    chosen {
-        zmk,kscan = &mock_kscan;
-        zmk,physical-layout = &physical_layout0;
-    };
-
-    mock_kscan: kscan_1 {
-        compatible = "zmk,kscan-mock";
-        columns = <0>;
-        rows = <0>;
-        events = <0>;
-    };
 };
