@@ -7,6 +7,8 @@
 #include "cosmos.dtsi"
 #include "split_input.dtsi"
 #include "cosmos-layouts.dtsi"
+#include <input/processors.dtsi>
+#include <behaviors/input_gestures_accel.dtsi>
 
 &physical_layout0 {
     transform = <&default_transform>;
@@ -29,8 +31,7 @@
 &trackball_split_listener { // local trackball input split device child node, receiving events from the peripheral and raising them locally
 	status = "okay";
     	input-processors = 
-		<&zip_xy_scaler 1 1>,
-		<&pointer_accel>;
+		    <&pointer_accel>;
 	scroll {
 		layers = <5>; // SCROLL
 		input-processors =
