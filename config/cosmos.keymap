@@ -1,8 +1,6 @@
 /*
     No chosen zmk,matrix-transform here if using ZMK stuidio.
     https://zmk.dev/docs/features/studio#adding-zmk-studio-support-to-a-keyboard
-
-    Put trackball listener here and place input-processors inside!
 */
 
 #include <input/processors.dtsi>
