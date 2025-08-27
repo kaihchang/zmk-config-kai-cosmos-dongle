@@ -27,8 +27,6 @@
 #define GAME 6
 #define COMBO_REQUIRE_DELAY 100
 
-&out OUT_USB; // prefer sending keyboard output to USB
-
 &mt {
     flavor = "tap-preferred";
     tapping-term-ms = <200>;
@@ -218,7 +216,7 @@
         _MOUSE {
             display-name = "Mouse";
             bindings = <
-&kp C_PLAY_PAUSE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &mkp MB4         &mkp MB5                                       &mkp MB1  &mkp MB2  &mkp MB3         &none              &to 0
+&kp C_PLAY_PAUSE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &mkp MB4         &mkp MB5                                       &mkp MB1  &mkp MB2  &mkp MB3         &none              &out OUT_TOG
 &kp ENTER         &to 5              &mkp MB1         &mkp MB2         &kp DEL                                        &mkp MB2  &to 5     &to 5            &none              &none
 &kp LC(X)         &kp LA(F4)         &mkp MB3         &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)                              &mkp MB3  &to 5     &to 5            &none              &none
                   &kp LC(C)          &kp LC(V)        &to 0            &kp LSHIFT         &kp LEFT_CONTROL  &mkp MB1  &to 5     &to 0     &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)
