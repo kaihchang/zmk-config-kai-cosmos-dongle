@@ -44,6 +44,11 @@
 	};
 };
 
+// enabling usb logging
+zephyr_udc0: &usbd {
+    status = "okay";
+};
+
 / {
     chosen {
         zmk,kscan = &mock_kscan;
