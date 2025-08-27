@@ -4,13 +4,13 @@ include:
     
   - board: nice_nano_v2
     shield: cosmos_right
-    snippet: zmk-usb-logging
+    # snippet: zmk-usb-logging
     
   - board: seeeduino_xiao_ble 
     shield: cosmos_dongle
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
-    snippet: zmk-usb-logging
+    # snippet: zmk-usb-logging
 
   - board: seeeduino_xiao_ble
     shield: settings_reset
