@@ -4,6 +4,7 @@ include:
     
   - board: nice_nano_v2
     shield: cosmos_right
+    snippet: zmk-usb-logging
     
   - board: seeeduino_xiao_ble 
     shield: cosmos_dongle
