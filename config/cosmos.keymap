@@ -29,10 +29,10 @@
 #define COMBO_REQUIRE_DELAY 100
 
 &mt {
-    flavor = "tap-preferred";
+    flavor = "balanced";
     tapping-term-ms = <200>;
 
-    // flavor = "balanced";
+    // flavor = "tap-preferred";
     // tapping-term-ms = <170>;
 };
 
