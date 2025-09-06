@@ -43,16 +43,17 @@
     behaviors {
         holdtap_comma: holdtap_comma {
             compatible = "zmk,behavior-hold-tap";
+            flavor = "balanced";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             hold-trigger-key-positions = <27>;
-            flavor = "hold-preferred";
         };
 
         holdtap_period: holdtap_period {
             compatible = "zmk,behavior-hold-tap";
+            flavor = "balanced";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -62,6 +63,7 @@
 
         holdtap_equal_enter: holdtap_equal_enter {
             compatible = "zmk,behavior-hold-tap";
+            flavor = "balanced";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
