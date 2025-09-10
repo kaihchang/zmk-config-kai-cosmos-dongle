@@ -11,6 +11,7 @@
 #include <input/processors/xyz.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 #include <behaviors/input_gestures_accel.dtsi>
+#include <input/processors/report_rate_limit.dtsi>
 
 &physical_layout0 {
     transform = <&default_transform>;
