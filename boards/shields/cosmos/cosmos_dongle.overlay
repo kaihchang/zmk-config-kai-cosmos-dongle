@@ -8,7 +8,7 @@
 #include "split_input.dtsi"
 #include "cosmos-layouts.dtsi"
 #include <input/processors.dtsi>
-#include <input/processors/report_rate_limit.dtsi>
+#include <input/processors/xyz.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 #include <behaviors/input_gestures_accel.dtsi>
 
@@ -36,7 +36,8 @@
 	status = "okay";
     	input-processors = 
 		    <&pointer_accel>,
-            <&zip_ble_report_rate_limit 8>; // from badjeff's zmk-input-processor-report-rate-limit
+            <&zip_report_rate_limit 8>, // from badjeff's zmk-input-processor-report-rate-limit
+		    <&zip_xyz>; // from badjeff's zmk-input-processor-xyz. Add the compressor (zip_xyz) on central overlay.
 	scroll {
 		layers = <5>; // SCROLL
 		input-processors =
