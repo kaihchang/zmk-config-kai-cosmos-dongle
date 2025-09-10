@@ -37,7 +37,7 @@
 	status = "okay";
     	input-processors = 
 		    <&pointer_accel>,
-		    <&zip_xyz>, // from badjeff's zmk-input-processor-xyz. Add the compressor (zip_xyz) on central overlay.
+		    <&zip_zxy>, // from badjeff's zmk-input-processor-xyz. Add the compressor (zip_zxy) on central overlay.
             <&zip_report_rate_limit 8>; // from badjeff's zmk-input-processor-report-rate-limit
 	scroll {
 		layers = <5>; // SCROLL
