@@ -6,8 +6,6 @@ manifest:
       url-base: https://github.com/badjeff/
     - name: efogdev
       url-base: https://github.com/efogdev
-    - name: nuovotaka
-      url-base: https://github.com/nuovotaka
 
   projects:
     - name: zmk
@@ -22,9 +20,6 @@ manifest:
       revision: main
     - name: zmk-input-processor-xyz
       remote: badjeff
-      revision: main
-    - name: zmk-pointing-acceleration-alpha
-      remote: nuovotaka
       revision: main
 
   self:
