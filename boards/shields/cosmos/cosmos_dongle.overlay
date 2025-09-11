@@ -10,19 +10,30 @@
 #include <input/processors.dtsi>
 #include <input/processors/xyz.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
+#include <behaviors/input_gestures_accel.dtsi>
 
 &physical_layout0 {
     transform = <&default_transform>;
 };
 
-/* More about input processors: https://zmk.dev/docs/keymaps/input-processors#input-processors-overview */
+/* https://github.com/oleksandrmaslov/zmk-pointing-acceleration?tab=readme-ov-file#configure-acceleration */
+&pointer_accel {
+    input-type = <INPUT_EV_REL>;  // For relative input devices
+    min-factor = <800>;           // 0.8x at very slow speeds
+    max-factor = <3000>;          // 3.0x at fast speeds
+    speed-threshold = <900>;      // 900 counts/sec for 1x
+    speed-max = <2000>;           // 6000 counts/sec for max accel
+    acceleration-exponent = <2>;  // 1:linear, 2:quadratic, 3:cubic
+    track-remainders;             // Accumulate fractional movements
+};
 
-// local trackball input split device child node, receiving events from the peripheral and raising them locally.
+/* local trackball input split device child node, receiving events from the peripheral and raising them locally. */
 // look into <split_input.dtsi> for mother node.
 &trackball_split_listener {
 	status = "okay";
     input-processors =
-        <&zip_zxy>; // decompressor by badjeff
+        <&zip_zxy>, // decompressor by badjeff
+        <&pointer_accel>;
 	scroll {
 		layers = <5>; // SCROLL
 		input-processors =

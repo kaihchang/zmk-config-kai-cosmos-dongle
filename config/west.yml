@@ -6,6 +6,8 @@ manifest:
       url-base: https://github.com/badjeff/
     - name: efogdev
       url-base: https://github.com/efogdev
+    - name: oleksandrmaslov
+      url-base: https://github.com/oleksandrmaslov
 
   projects:
     - name: zmk
@@ -20,6 +22,9 @@ manifest:
       revision: main
     - name: zmk-input-processor-xyz
       remote: badjeff
+      revision: main
+    - name: zmk-pointing-acceleration
+      remote: oleksandrmaslov
       revision: main
 
   self:
