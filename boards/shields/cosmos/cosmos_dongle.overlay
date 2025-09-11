@@ -35,15 +35,13 @@
 
 &trackball_split_listener { // local trackball input split device child node, receiving events from the peripheral and raising them locally
 	status = "okay";
- input-processors =
-  <&zip_zxy>, // decompressor by badjeff
-  <&pointer_accel>,
-  <&zip_report_rate_limit 8>; // limiter by badjeff
+    input-processors =
+        <&zip_zxy>, // decompressor by badjeff
+        <&pointer_accel>;
 	scroll {
 		layers = <5>; // SCROLL
 		input-processors =
-            <&zip_zxy>,
-            <&zip_report_rate_limit 8>,
+            <&zip_zxy>, // decompressor by badjeff
             <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>,
             <&zip_xy_scaler 1 16>,
             <&zip_xy_to_scroll_mapper>;
