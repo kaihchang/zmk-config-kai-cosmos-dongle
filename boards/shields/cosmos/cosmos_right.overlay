@@ -17,8 +17,8 @@
 &trackball_split_input { // local trackball *split* input device child node
 	device = <&trackball>;
 	input-processors =
-		<&zip_xyz>, // from badjeff's zmk-input-processor-xyz. Add the compressor (zip_xyz) on peripheral overlay.
-		<&zip_report_rate_limit 8>; // from badjeff's zmk-input-processor-report-rate-limit
+		<&zip_report_rate_limit 8>, // rate limiter by badjeff
+		<&zip_xyz>; // compressor by badjeff
 };
 
 / {
