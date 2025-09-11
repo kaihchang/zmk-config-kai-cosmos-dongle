@@ -21,8 +21,8 @@
     input-type = <INPUT_EV_REL>;  // For relative input devices
     min-factor = <800>;           // 0.8x at very slow speeds
     max-factor = <3000>;          // 3.0x at fast speeds
-    speed-threshold = <900>;      // 900 counts/sec for 1x
-    speed-max = <2000>;           // 6000 counts/sec for max accel
+    speed-threshold = <1200>;      // 1200 counts/sec for 1x
+    speed-max = <6000>;           // 6000 counts/sec for max accel
     acceleration-exponent = <2>;  // 1:linear, 2:quadratic, 3:cubic
     track-remainders;             // Accumulate fractional movements
 };
