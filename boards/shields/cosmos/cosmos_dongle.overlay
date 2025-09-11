@@ -20,20 +20,22 @@
 &pointer_accel { // this needs to be put BEFORE input-listener
     input-type = <INPUT_EV_REL>;
     codes = <INPUT_REL_X INPUT_REL_Y>;
-    sensitivity = <800>;          // 0.8x base sensitivity
-	min-factor = <800>;			  // 0.8x minimum for percision
-    max-factor = <3000>;          // 3.0x maximum acceleration
-    acceleration-exponent = <1>;  // Advanced exponential curve (1-5)
-    y-boost = <1100>;             // 1.1x Y-axis boost for widescreen
-    speed-threshold = <900>;      // Start acceleration at 900 counts/sec, just 1.5 inch/sec
-    speed-max = <1800>;           // Max acceleration at 1800 counts/sec, just 3 inch/sec
-    min-factor = <1000>;          // 1.0x minimum (no deceleration)
-	sensor-dpi = <600>;
+    // sensitivity = <800>;          // 0.8x base sensitivity
+	// min-factor = <800>;			  // 0.8x minimum for percision
+    // max-factor = <3000>;          // 3.0x maximum acceleration
+    // acceleration-exponent = <1>;  // Advanced exponential curve (1-5)
+    // y-boost = <1100>;             // 1.1x Y-axis boost for widescreen
+    // speed-threshold = <900>;      // Start acceleration at 900 counts/sec, just 1.5 inch/sec
+    // speed-max = <1800>;           // Max acceleration at 1800 counts/sec, just 3 inch/sec
+    // min-factor = <1000>;          // 1.0x minimum (no deceleration)
+	// sensor-dpi = <600>;
 };
 
 /* More about input processors: https://zmk.dev/docs/keymaps/input-processors#input-processors-overview */
 
-&trackball_split_listener { // local trackball input split device child node, receiving events from the peripheral and raising them locally
+// local trackball input split device child node, receiving events from the peripheral and raising them locally.
+// look into <split_input.dtsi> for mother node.
+&trackball_split_listener {
 	status = "okay";
     input-processors =
         <&zip_zxy>, // decompressor by badjeff
