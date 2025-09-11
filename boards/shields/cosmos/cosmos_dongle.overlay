@@ -36,8 +36,8 @@
 &trackball_split_listener { // local trackball input split device child node, receiving events from the peripheral and raising them locally
 	status = "okay";
     input-processors =
-        <&pointer_accel>,
         <&zip_zxy>, // from badjeff's zmk-input-processor-xyz. Add the compressor (zip_zxy) on central overlay.
+        <&pointer_accel>,
         <&zip_report_rate_limit 8>; // from badjeff's zmk-input-processor-report-rate-limit
 	scroll {
 		layers = <5>; // SCROLL
