@@ -1,8 +1,8 @@
 include:
-  - board: nice_nano
+  - board: nice_nano_v2
     shield: cosmos_left
     
-  - board: nice_nano
+  - board: nice_nano_v2
     shield: cosmos_right
     # snippet: zmk-usb-logging
     
@@ -15,5 +15,5 @@ include:
   # - board: seeeduino_xiao_ble
   #   shield: settings_reset
 
-  # - board: nice_nano
+  # - board: nice_nano_v2
   #   shield: settings_reset
