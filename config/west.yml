@@ -14,11 +14,11 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      revision: v0.3
       import: app/west.yml
     - name: zmk-pmw3610-driver
       remote: efogdev
-      revision: zephyr-4.1
+      revision: main
     - name: zmk-input-processor-report-rate-limit
       remote: badjeff
       revision: main
@@ -30,7 +30,7 @@ manifest:
       revision: main
     - name: zmk-dongle-screen
       remote: janpfischer
-      revision: upgrade-4.1
+      revision: main
 
   self:
     path: config
