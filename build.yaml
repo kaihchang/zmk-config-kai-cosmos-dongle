@@ -21,6 +21,6 @@ include:
     shield: settings_reset
     artifact-name: cosmos-dongle-settings-reset
 
-  - board: nice_nano//zmk
+  - board: nice_nano
     shield: settings_reset
     artifact-name: cosmos-splits-settings-reset
