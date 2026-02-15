@@ -4,13 +4,11 @@ include:
     
   - board: nice_nano//zmk
     shield: cosmos_right
-    # snippet: zmk-usb-logging
     
   - board: xiao_ble//zmk
     shield: cosmos_dongle prospector_adapter
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
-    # snippet: zmk-usb-logging
+    snippet: zmk-usb-logging studio-rpc-usb-uart
+    cmake-args: -DCONFIG_LOG_PROCESS_THREAD_STARTUP_DELAY_MS=8000 -DCONFIG_ZMK_STUDIO=y
 
   - board: xiao_ble//zmk
     shield: settings_reset
