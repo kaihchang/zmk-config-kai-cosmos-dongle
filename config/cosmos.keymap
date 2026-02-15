@@ -218,9 +218,9 @@
         _MOUSE {
             display-name = "Mouse";
             bindings = <
-&kp C_PLAY_PAUSE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &mkp MB4         &mkp MB5                                       &mkp MB4  &mkp MB5  &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &to 0
-&kp ENTER         &to 5              &mkp MB1         &mkp MB2         &kp DEL                                        &mkp MB2  &to 5     &to 5            &kp C_VOLUME_UP    &out OUT_TOG
-&kp LA(TAB)       &kp LA(F4)         &mkp MB3         &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)                              &mkp MB3  &to 5     &to 5            &kp C_VOLUME_DOWN  &kp LA(TAB)
+&kp C_PLAY_PAUSE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &mkp MB4         &mkp MB5                                       &mkp MB4  &mkp MB5  &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp C_PLAY_PAUSE
+&kp ENTER         &to 5              &mkp MB1         &mkp MB2         &kp DEL                                        &mkp MB2  &to 5     &to 5            &to 5              &out OUT_TOG
+&kp LA(TAB)       &kp LA(F4)         &mkp MB3         &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)                              &mkp MB3  &to 5     &to 5            &to 5              &kp LA(TAB)
                   &kp LC(X)          &kp LC(V)        &to 0            &kp LSHIFT         &kp LEFT_CONTROL  &mkp MB1  &to 5     &to 0     &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)
             >;
         };
@@ -228,9 +228,9 @@
         _SCROLL {
             display-name = "Scroll";
             bindings = <
-&kp C_PLAY_PAUSE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &mkp MB4         &mkp MB5                                       &mkp MB4  &mkp MB5  &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &to 0
-&kp ENTER         &to 4              &mkp MB1         &mkp MB2         &kp DEL                                        &mkp MB2  &to 4     &to 4            &kp C_VOLUME_UP    &bootloader
-&kp LA(TAB)       &kp LA(F4)         &mkp MB3         &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)                              &mkp MB3  &to 4     &to 4            &kp C_VOLUME_DOWN  &kp LA(TAB)
+&kp C_PLAY_PAUSE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &mkp MB4         &mkp MB5                                       &mkp MB4  &mkp MB5  &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp C_PLAY_PAUSE
+&kp ENTER         &to 4              &mkp MB1         &mkp MB2         &kp DEL                                        &mkp MB2  &to 4     &to 4            &to 5              &bootloader
+&kp LA(TAB)       &kp LA(F4)         &mkp MB3         &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)                              &mkp MB3  &to 4     &to 4            &to 5              &kp LA(TAB)
                   &kp LC(X)          &kp LC(V)        &to 0            &kp LSHIFT         &kp LEFT_CONTROL  &mkp MB1  &to 4     &to 0     &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)
             >;
         };
