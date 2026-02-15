@@ -206,7 +206,7 @@
         };
 
         _NAV {
-            display-name = "Navigation";
+            display-name = "Navi";
             bindings = <
 &bt BT_CLR  &bt BT_PRV  &bt BT_NXT  &kp F11  &kp F12                  &mkp MB4         &mkp MB5           &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp C_PLAY_PAUSE
 &kp F6      &kp F7      &kp F8      &kp F9   &kp F10                  &kp HOME         &kp LEFT           &kp UP           &kp RIGHT          &kp END

@@ -8,6 +8,8 @@ manifest:
       url-base: https://github.com/efogdev
     - name: oleksandrmaslov
       url-base: https://github.com/oleksandrmaslov
+    - name: carrefinho
+      url-base: https://github.com/carrefinho  
 
   projects:
     - name: zmk
@@ -26,6 +28,9 @@ manifest:
     - name: zmk-pointing-acceleration
       remote: oleksandrmaslov
       revision: main
+    - name: prospector-zmk-module
+      remote: carrefinho
+      revision: feat/new-status-screens
 
   self:
     path: config
