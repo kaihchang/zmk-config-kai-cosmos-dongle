@@ -10,17 +10,17 @@ include:
     # snippet: zmk-usb-logging
     artifact-name: cosmos-right
     
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble
     shield: cosmos_dongle dongle_screen
     snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
-    # snippet: zmk-usb-logging
+    cmake-args: -DCONFIG_LOG_PROCESS_THREAD_STARTUP_DELAY_MS=8000 -DCONFIG_ZMK_STUDIO=y
+    snippet: zmk-usb-logging studio-rpc-usb-uart
     artifact-name: cosmos-dongle-screen
 
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble
     shield: settings_reset
-    artifact-name: cosmos-dongle-settings-reset
+    artifact-name: reset-dongle-settings
 
   - board: nice_nano
     shield: settings_reset
-    artifact-name: cosmos-splits-settings-reset
+    artifact-name: reset-splits-settings

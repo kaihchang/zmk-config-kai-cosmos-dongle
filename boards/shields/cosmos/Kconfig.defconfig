@@ -16,3 +16,7 @@ if SHIELD_COSMOS_RIGHT
 config SPI
     default y
 endif
+
+# ZMK Studio Support
+CONFIG_ZMK_STUDIO=y
+CONFIG_ZMK_SETTINGS_SHELL=y
