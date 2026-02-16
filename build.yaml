@@ -1,17 +1,22 @@
 include:
   - board: nice_nano//zmk
     shield: cosmos_left
+    artifact-name: cosmos_left
     
   - board: nice_nano//zmk
     shield: cosmos_right
+    artifact-name: cosmos_trackball_right
     
   - board: xiao_ble//zmk
     shield: cosmos_dongle dongle_display
     snippet: zmk-usb-logging studio-rpc-usb-uart
     cmake-args: -DCONFIG_LOG_PROCESS_THREAD_STARTUP_DELAY_MS=8000 -DCONFIG_ZMK_STUDIO=y
+    artifact-name: cosmos_screen_dongle
 
   - board: xiao_ble//zmk
     shield: settings_reset
+    artifact-name: cosmos_xiao_ble_reset
 
   - board: nice_nano//zmk
     shield: settings_reset
+    artifact-name: cosmos_nice_nano_reset
