@@ -14,11 +14,11 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: v0.3
+      revision: ac7f75b8591d39aaf3b66b9d26f26c9ed921a009
       import: app/west.yml
     - name: zmk-pmw3610-driver
       remote: efogdev
-      revision: main
+      revision: zephyr-4.1
     - name: zmk-input-processor-report-rate-limit
       remote: badjeff
       revision: main
@@ -30,7 +30,7 @@ manifest:
       revision: main
     - name: prospector-zmk-module
       remote: carrefinho
-      revision: main
+      revision: feat/new-status-screens
 
   self:
     path: config

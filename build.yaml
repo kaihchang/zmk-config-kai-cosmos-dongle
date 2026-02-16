@@ -1,17 +1,17 @@
 include:
-  - board: nice_nano
+  - board: nice_nano//zmk
     shield: cosmos_left
     
-  - board: nice_nano
+  - board: nice_nano//zmk
     shield: cosmos_right
     
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble//zmk
     shield: cosmos_dongle prospector_adapter
     snippet: zmk-usb-logging studio-rpc-usb-uart
     cmake-args: -DCONFIG_LOG_PROCESS_THREAD_STARTUP_DELAY_MS=8000 -DCONFIG_ZMK_STUDIO=y
 
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble//zmk
     shield: settings_reset
 
-  - board: nice_nano
+  - board: nice_nano//zmk
     shield: settings_reset
