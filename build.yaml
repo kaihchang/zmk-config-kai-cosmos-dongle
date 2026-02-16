@@ -16,10 +16,10 @@ include:
     snippet: zmk-usb-logging studio-rpc-usb-uart
     artifact-name: cosmos-dongle-screen
 
-  - board: seeeduino_xiao_ble
-    shield: settings_reset
-    artifact-name: reset-dongle-settings
+  # - board: seeeduino_xiao_ble
+  #   shield: settings_reset
+  #   artifact-name: reset-dongle-settings
 
-  - board: nice_nano_v2
-    shield: settings_reset
-    artifact-name: reset-splits-settings
+  # - board: nice_nano_v2
+  #   shield: settings_reset
+  #   artifact-name: reset-splits-settings
