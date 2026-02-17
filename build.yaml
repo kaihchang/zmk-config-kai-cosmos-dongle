@@ -15,8 +15,8 @@ include:
 
   - board: xiao_ble//zmk
     shield: settings_reset
-    artifact-name: xiao_ble_reset
+    artifact-name: xiao_ble_dongle_reset
 
   - board: nice_nano//zmk
     shield: settings_reset
-    artifact-name: nice_nano_reset
+    artifact-name: nice_nano_splits_reset
