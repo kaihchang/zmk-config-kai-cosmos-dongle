@@ -4,6 +4,7 @@
 #include "cosmos-layouts.dtsi"
 #include <input/processors/xyz.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
+#include <behaviors/input_gestures_accel.dtsi>
 #include <input/processors/report_rate_limit.dtsi>
 
 &default_transform {
@@ -15,7 +16,7 @@
 };
 
 /* https://github.com/oleksandrmaslov/zmk-pointing-acceleration?tab=readme-ov-file#configure-acceleration */
-&pointer_accel {
+&pointer_accel { // this needs to be put BEFORE input-listener
     input-type = <INPUT_EV_REL>;  // For relative input devices
     min-factor = <600>;           // 0.6x at very slow speeds
     max-factor = <4000>;          // 4.0x at fast speeds
