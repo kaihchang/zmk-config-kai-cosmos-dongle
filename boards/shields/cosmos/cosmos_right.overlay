@@ -4,6 +4,7 @@
 #include "cosmos-layouts.dtsi"
 #include <input/processors/xyz.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
+#include <behaviors/input_gestures_accel.dtsi>
 #include <input/processors/report_rate_limit.dtsi>
 
 &default_transform {
@@ -14,11 +15,27 @@
     status = "okay";
 };
 
+/* https://github.com/oleksandrmaslov/zmk-pointing-acceleration?tab=readme-ov-file#configure-acceleration */
+&pointer_accel {
+    input-type = <INPUT_EV_REL>;  // For relative input devices
+    min-factor = <600>;           // 0.6x at very slow speeds
+    max-factor = <4000>;          // 4.0x at fast speeds
+    speed-threshold = <1000>;     // 1000 counts/sec for 1x
+    speed-max = <6000>;           // 6000 counts/sec for max accel
+    acceleration-exponent = <3>;  // 1:linear, 2:quadratic, 3:cubic
+    track-remainders;             // accumulate fractional movements
+};
+
 &trackball_split_input { // local trackball *split* input device child node
 	device = <&trackball>;
 	input-processors =
+        <&pointer_accel>, // badjeff said to put this before <&zip_xyz>. Do this part when you still have raw XY data.
 		<&zip_report_rate_limit 8>, // rate limiter by badjeff
 		<&zip_xyz>; // compressor by badjeff
+};
+
+&zip_report_rate_limit {
+    limit-ble-only;
 };
 
 / {
