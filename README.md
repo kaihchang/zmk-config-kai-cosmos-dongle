@@ -4,11 +4,16 @@
 ![PXL_20260223_072353347](https://github.com/user-attachments/assets/023da99d-566a-4df6-bb34-ed8c57c28755)
 
 Features:<br/>
-✅ Englmaxi SSD1306 display dongle<br/>
+✅ Modified Englmaxi SSD1306 display dongle, with accessible reset button & fixing screws & enough room for dupont wires<br/>
 ✅ ZMK Studio<br/>
 ✅ Scroll with trackball<br/>
 ✅ Up to 125Hz wireless transmission frequency (Bluetooth's highest limitation)<br/>
 ✅ Cursor acceleration (faster you roll, faster you move)<br/>
+
+Case features:
+![reset_button](https://github.com/user-attachments/assets/cdc80e9d-5989-43d8-908a-6ddf7072212f)
+![room_dupont_wires](https://github.com/user-attachments/assets/bcb888de-c35a-4fb7-b9fa-417f7ea7f634)
+![drop_in_nuts](https://github.com/user-attachments/assets/5e46ab2d-e701-4a85-a9e6-9101fdf2f669)
 
 What's good about ZMK dongles?<br/>
 - Almost immediate connection and wake-up from sleep mode.<br/>
